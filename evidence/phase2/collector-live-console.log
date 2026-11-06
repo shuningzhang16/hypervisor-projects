@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/mnt/e/桌面/Hypervisor-Projects-work/kvm_exit_analyzer/tests/collector_integration.py", line 10, in <module>
+    output.mkdir(parents=True, exist_ok=False)
+  File "/usr/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/collector-live'

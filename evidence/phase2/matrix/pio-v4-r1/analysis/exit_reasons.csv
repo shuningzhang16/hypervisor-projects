@@ -1,0 +1,10 @@
+tid,isa,reason,count
+1993,unspecified,interrupt,6
+1993,unspecified,io,1682
+1994,unspecified,interrupt,6
+1994,unspecified,io,1672
+1994,unspecified,npf,1
+1995,unspecified,interrupt,12
+1995,unspecified,io,1681
+1996,unspecified,interrupt,9
+1996,unspecified,io,1682

@@ -1,0 +1,10 @@
+{
+  "mode": "net",
+  "units": 4980736,
+  "unit": "verified_echo_bytes",
+  "elapsed_ns": 3021016682,
+  "rate": 1648695.298,
+  "traced": true,
+  "host_start_ns": 406025876430,
+  "host_end_ns": 409034884598
+}

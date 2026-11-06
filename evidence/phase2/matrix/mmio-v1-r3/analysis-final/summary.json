@@ -1,0 +1,38 @@
+{
+  "source": "/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/matrix/mmio-v1-r3/capture/trace.txt",
+  "source_kind": "real-kvm-microbench",
+  "vcpu_tids": [
+    2324
+  ],
+  "diagnostic_files": [
+    "/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/matrix/mmio-v1-r3/capture/collection.log",
+    "/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/matrix/mmio-v1-r3/capture/report.stderr"
+  ],
+  "vcpu_ids_by_tid": {
+    "2324": [
+      "0"
+    ]
+  },
+  "first_timestamp_ns": 358562009540,
+  "last_timestamp_ns": 360564408166,
+  "observed_span_seconds": 2.002398626,
+  "event_counts": {
+    "kvm_entry": 1719,
+    "kvm_exit": 1719,
+    "kvm_mmio": 2571,
+    "sched_switch": 3430,
+    "sched_wakeup": 1715
+  },
+  "warnings": {
+    "trailing_exit_without_entry": 1
+  },
+  "timing_degraded": false,
+  "notes": [
+    "Synthetic input remains synthetic; this analyzer cannot establish provenance.",
+    "Entry/exit intervals are wall time, not pure guest CPU time or pure exit handling cost.",
+    "Scheduler latencies require a synchronized cross-CPU trace clock and both scheduler events.",
+    "Rates use first/last relevant events, not requested recording duration.",
+    "One-second bins are sparse; missing rows mean zero; first/last bins may be partial.",
+    "Loss reported only on stderr/collection.log must also be reviewed by the operator."
+  ]
+}

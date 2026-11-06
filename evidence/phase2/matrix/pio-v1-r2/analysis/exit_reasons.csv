@@ -1,0 +1,4 @@
+tid,isa,reason,count
+1646,unspecified,interrupt,10
+1646,unspecified,io,1653
+1646,unspecified,npf,1

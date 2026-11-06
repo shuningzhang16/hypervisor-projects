@@ -1,0 +1,9 @@
+Python AST: 17 source files passed
+Bash syntax: 6 scripts passed
+Five device/protocol files equal the source of the tested QEMU binary
+Previously applied/compiled QEMU patch unchanged
+Local documentation links: 78 resolved (historical evidence retained on desktop)
+48 run rates independently recomputed; 24 raw recordings retained; exit counts and paired differences matched
+Packed, hotplug, ten-minute soak and offline test completion records verified
+Guest archive contains the expected tested assets and disposable 192 MiB blank disk
+Workflow YAML parsed; this does not assert cloud CI execution

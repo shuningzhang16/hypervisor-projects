@@ -1,0 +1,8 @@
+tid,isa,reason,count
+1034,unspecified,cpuid,41
+1034,unspecified,hlt,829
+1034,unspecified,interrupt,72
+1034,unspecified,io,171
+1034,unspecified,msr,2594
+1034,unspecified,npf,516
+1034,unspecified,vintr,25

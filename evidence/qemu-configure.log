@@ -1,0 +1,9 @@
+python determined to be '/usr/bin/python3'
+python version: Python 3.10.12
+mkvenv: Creating non-isolated virtual environment at 'pyvenv'
+
+*** Ouch! ***
+
+found no usable tomli, please install it 
+
+

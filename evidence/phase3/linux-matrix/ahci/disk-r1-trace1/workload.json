@@ -1,0 +1,10 @@
+{
+  "mode": "disk",
+  "units": 12189696,
+  "unit": "verified_write_bytes",
+  "elapsed_ns": 3006657318,
+  "rate": 4054235.222,
+  "traced": true,
+  "host_start_ns": 342575894427,
+  "host_end_ns": 345583314940
+}

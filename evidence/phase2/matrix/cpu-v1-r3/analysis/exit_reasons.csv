@@ -1,0 +1,4 @@
+tid,isa,reason,count
+1029,unspecified,interrupt,17
+1029,unspecified,io,1635
+1029,unspecified,npf,1

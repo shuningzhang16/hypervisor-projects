@@ -1,0 +1,16 @@
+trace_second,event,count
+211,kvm_entry,333
+211,kvm_exit,332
+211,kvm_pio,49
+211,sched_switch,15
+211,sched_wakeup,8
+212,kvm_entry,752
+212,kvm_exit,752
+212,sched_switch,2
+213,kvm_entry,751
+213,kvm_exit,751
+214,kvm_entry,729
+214,kvm_exit,729
+214,kvm_pio,213
+214,sched_switch,4
+214,sched_wakeup,2

@@ -1,0 +1,7 @@
+/usr/bin/python3 -c import os, signal, time, sys
+signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGUSR1})
+with open(sys.argv[1], 'w') as f: f.write(f'hypervisor_tid={os.getpid()}')
+print(os.getpid(), flush=True)
+signal.sigwait({signal.SIGUSR1})
+for i in range(40): time.sleep(0.01)
+ /sys/kernel/tracing/instances/lab-tid-map-614/trace_marker 

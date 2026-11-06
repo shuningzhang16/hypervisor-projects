@@ -1,0 +1,17 @@
+[
+  "/mnt/e/\u684c\u9762/Hypervisor-Projects-work/build/kvm_microbench",
+  "--mode",
+  "pio",
+  "--vcpus",
+  "1",
+  "--seconds",
+  "2",
+  "--delay-ms",
+  "0",
+  "--pause-us",
+  "1000",
+  "--wait-signal",
+  "1",
+  "--trace-marker",
+  "/sys/kernel/tracing/instances/lab-tid-map-539/trace_marker"
+]

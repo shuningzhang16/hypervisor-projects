@@ -1,0 +1,4 @@
+tid,isa,reason,count
+1726,unspecified,interrupt,6
+1726,unspecified,io,1656
+1726,unspecified,npf,1

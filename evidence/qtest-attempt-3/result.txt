@@ -1,0 +1,1 @@
+PASS: qtest transport checks; no Guest OS or KVM benchmark

@@ -1,0 +1,2 @@
+{"state":"ready","pid":1449,"tids":[1450,1451]}
+{"state":"finished","mode":"pio","vcpus":2,"pause_us":1000,"workers":[{"tid":1450,"io_exits":1682,"mmio_exits":0,"elapsed_ns":2000239961,"error":0},{"tid":1451,"io_exits":1685,"mmio_exits":0,"elapsed_ns":2000035212,"error":0}]}

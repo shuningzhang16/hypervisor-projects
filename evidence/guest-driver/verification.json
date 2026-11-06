@@ -1,0 +1,25 @@
+{
+  "kvm-split-ready": {
+    "result": "PASS",
+    "device_completions": 2164,
+    "latency_samples": 1000,
+    "checks": 26
+  },
+  "kvm-packed-ready": {
+    "result": "PASS",
+    "device_completions": 2164,
+    "latency_samples": 1000,
+    "checks": 26
+  },
+  "tcg-smoke": {
+    "result": "PASS",
+    "scope": "functional smoke; not performance"
+  },
+  "tcg-packed-smoke": {
+    "result": "PASS",
+    "scope": "functional smoke; not performance"
+  },
+  "host_custom_module_loaded": false,
+  "module_source_matches_tested_build": true,
+  "kernel_package": "5.15.0-194.204"
+}

@@ -1,0 +1,47 @@
+{
+  "source": "/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/qtest-stress-final/device-trace.log",
+  "label": "TCG qtest stress; per-completion logging to a Windows-mounted volume",
+  "by_status": {
+    "0": {
+      "count": 65702,
+      "mean_ns": 10560931.650878208,
+      "min_ns": 371705,
+      "max_ns": 242402106,
+      "p50_ns": 9310735,
+      "p95_ns": 23922860,
+      "p99_ns": 45019586
+    },
+    "1": {
+      "count": 2,
+      "mean_ns": 716838.0,
+      "min_ns": 494712,
+      "max_ns": 938964,
+      "p50_ns": 494712,
+      "p95_ns": 938964,
+      "p99_ns": 938964
+    },
+    "2": {
+      "count": 1,
+      "mean_ns": 967720.0,
+      "min_ns": 967720,
+      "max_ns": 967720,
+      "p50_ns": 967720,
+      "p95_ns": 967720,
+      "p99_ns": 967720
+    },
+    "3": {
+      "count": 1,
+      "mean_ns": 569769.0,
+      "min_ns": 569769,
+      "max_ns": 569769,
+      "p50_ns": 569769,
+      "p95_ns": 569769,
+      "p99_ns": 569769
+    }
+  },
+  "notes": [
+    "These are backend callback-to-completion observations; not Guest end-to-end latency.",
+    "Batching and enabled trace logging affect these durations.",
+    "TCG/qtest timing cannot represent KVM performance."
+  ]
+}

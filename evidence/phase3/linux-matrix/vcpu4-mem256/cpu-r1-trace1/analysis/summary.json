@@ -1,0 +1,51 @@
+{
+  "source": "/var/tmp/hypervisor-phase3-evidence/linux-matrix/vcpu4-mem256/cpu-r1-trace1/workload-trace.txt",
+  "source_kind": "real-kvm",
+  "vcpu_tids": [
+    1796,
+    1797,
+    1798,
+    1799
+  ],
+  "diagnostic_files": [
+    "/var/tmp/hypervisor-phase3-evidence/linux-matrix/vcpu4-mem256/cpu-r1-trace1/trace/collection.log",
+    "/var/tmp/hypervisor-phase3-evidence/linux-matrix/vcpu4-mem256/cpu-r1-trace1/trace/report.stderr"
+  ],
+  "vcpu_ids_by_tid": {
+    "1796": [
+      "0"
+    ],
+    "1797": [
+      "1"
+    ],
+    "1798": [
+      "2"
+    ],
+    "1799": [
+      "3"
+    ]
+  },
+  "first_timestamp_ns": 235254805199,
+  "last_timestamp_ns": 238244642012,
+  "observed_span_seconds": 2.989836813,
+  "event_counts": {
+    "kvm_entry": 11246,
+    "kvm_exit": 11245,
+    "kvm_pio": 367,
+    "sched_switch": 81,
+    "sched_wakeup": 25
+  },
+  "warnings": {
+    "trailing_entry_without_exit": 1,
+    "trailing_exit_without_entry": 3
+  },
+  "timing_degraded": false,
+  "notes": [
+    "Synthetic input remains synthetic; this analyzer cannot establish provenance.",
+    "Entry/exit intervals are wall time, not pure guest CPU time or pure exit handling cost.",
+    "Scheduler latencies require a synchronized cross-CPU trace clock and both scheduler events.",
+    "Rates use first/last relevant events, not requested recording duration.",
+    "One-second bins are sparse; missing rows mean zero; first/last bins may be partial.",
+    "Loss reported only on stderr/collection.log must also be reviewed by the operator."
+  ]
+}

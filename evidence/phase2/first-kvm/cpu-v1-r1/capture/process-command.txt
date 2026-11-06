@@ -1,0 +1,1 @@
+/mnt/e/桌面/Hypervisor-Projects-work/build/kvm_microbench --mode cpu --vcpus 1 --seconds 2 --delay-ms 1000 --pause-us 1000 

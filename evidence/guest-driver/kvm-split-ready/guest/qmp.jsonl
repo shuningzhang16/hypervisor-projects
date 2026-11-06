@@ -1,0 +1,20 @@
+{"QMP": {"version": {"qemu": {"micro": 0, "minor": 2, "major": 9}, "package": ""}, "capabilities": ["oob"]}}
+{"execute": "qmp_capabilities"}
+{"return": {}}
+{"execute": "query-cpus-fast"}
+{"return": [{"thread-id": 887, "props": {"core-id": 0, "thread-id": 0, "socket-id": 0}, "qom-path": "/machine/unattached/device[0]", "cpu-index": 0, "target": "x86_64"}, {"thread-id": 888, "props": {"core-id": 1, "thread-id": 0, "socket-id": 0}, "qom-path": "/machine/unattached/device[2]", "cpu-index": 1, "target": "x86_64"}]}
+{"execute": "cont"}
+{"timestamp": {"seconds": 1793895006, "microseconds": 543114}, "event": "RESUME"}
+{"return": {}}
+{"execute": "query-kvm"}
+{"return": {"enabled": true, "present": true}}
+{"execute": "device_del", "arguments": {"id": "lab"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793895017, "microseconds": 447562}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab/virtio-backend"}}
+{"timestamp": {"seconds": 1793895017, "microseconds": 498595}, "event": "DEVICE_DELETED", "data": {"device": "lab", "path": "/machine/peripheral/lab"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab2", "bus": "labport", "packed": false}}
+{"return": {}}

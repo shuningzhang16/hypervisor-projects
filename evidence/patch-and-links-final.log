@@ -1,0 +1,2 @@
+PASS: patch applied to pristine v9.2.0 files; all 10 outputs equal compiled source.
+PASS: repository Markdown relative links resolve.

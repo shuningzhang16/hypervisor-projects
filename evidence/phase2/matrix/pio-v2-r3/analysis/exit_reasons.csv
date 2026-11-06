@@ -1,0 +1,6 @@
+tid,isa,reason,count
+1913,unspecified,interrupt,4
+1913,unspecified,io,1689
+1913,unspecified,npf,1
+1914,unspecified,interrupt,12
+1914,unspecified,io,1691

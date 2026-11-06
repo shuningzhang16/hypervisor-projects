@@ -1,0 +1,1 @@
+PASS: QMP system_reset + queue recovery; unmigratable device refused migration; clean quit

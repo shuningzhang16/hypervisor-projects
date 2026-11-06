@@ -1,0 +1,16 @@
+{
+  "mode": "net",
+  "units": 4915200,
+  "unit": "verified_echo_bytes",
+  "elapsed_ns": 3041468369,
+  "rate": 1616061.521,
+  "traced": false,
+  "host_start_ns": 428617936827,
+  "host_end_ns": 431607863662,
+  "configuration": "e1000",
+  "vcpus": 2,
+  "memory_mib": 256,
+  "disk": "virtio",
+  "nic": "e1000",
+  "repeat": 2
+}

@@ -1,0 +1,6 @@
+First inline WSL copy command lost its shell variable through Windows argument quoting.
+cp: cannot create directory '/evidence/phase3/': No such file or directory
+The command continued and copied the guest archive to /artifacts.
+Fixed by executing this Python file with explicit Paths. Evidence was copied successfully;
+the identical accidental archive was removed, and its empty directory removed with rmdir.
+No tests or VM experiments were rerun.

@@ -1,0 +1,31 @@
+uid=0(root) gid=0(root) groups=0(root)
+Linux WIN-OHFCGC0I6IA 6.6.114.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+TARGET              SOURCE  FSTYPE  OPTIONS
+/sys/kernel/tracing tracefs tracefs rw,nosuid,nodev,noexec,relatime
+kvm:kvm_entry
+kvm:kvm_pio
+kvm:kvm_exit
+kvm:kvm_mmio
+sched:sched_switch
+sched:sched_wakeup
+[local] global counter uptime perf mono mono_raw boot tai x86-tsc
+KVM API: 12
+KVM_CREATE_VM: success (no vCPU run)
+trace-cmd:
+  Installed: (none)
+  Candidate: 2.9.6-2
+  Version table:
+     2.9.6-2 500
+        500 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+libtraceevent1:
+  Installed: (none)
+  Candidate: 1:1.3.3-1
+  Version table:
+     1:1.3.3-1 500
+        500 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+libtracefs1:
+  Installed: (none)
+  Candidate: 1.2.5-1
+  Version table:
+     1.2.5-1 500
+        500 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages

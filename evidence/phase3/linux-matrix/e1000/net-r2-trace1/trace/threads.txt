@@ -1,0 +1,6 @@
+    PID     TID PSR COMMAND
+   1878    1878  12 qemu-system-x86
+   1878    1879   3 qemu-system-x86
+   1878    1880   0 qemu-system-x86
+   1878    1881   8 qemu-system-x86
+   1878    1882  14 qemu-system-x86

@@ -1,0 +1,21 @@
+[
+  "/var/tmp/hypervisor-build.0923va/qemu-9.2.0/build/qemu-system-x86_64",
+  "-machine",
+  "q35,accel=tcg",
+  "-m",
+  "64",
+  "-S",
+  "-nodefaults",
+  "-display",
+  "none",
+  "-device",
+  "virtio-lab-pci,addr=4.0",
+  "-qtest",
+  "unix:/tmp/virtio-lab-tmg71p79/qtest.sock,server=on,wait=off",
+  "-qtest-log",
+  "/dev/null",
+  "-trace",
+  "enable=virtio_lab_*",
+  "-D",
+  "/mnt/e/\u684c\u9762/Hypervisor-Projects-work/evidence/phase2/qtest-stress-final/device-trace.log"
+]

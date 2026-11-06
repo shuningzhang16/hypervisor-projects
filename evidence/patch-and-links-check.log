@@ -1,0 +1,11 @@
+error: dev/null: No such file or directory
+error: dev/null: No such file or directory
+error: dev/null: No such file or directory
+error: dev/null: No such file or directory
+error: dev/null: No such file or directory
+Traceback (most recent call last):
+  File "/mnt/e/UserData/Documents/ChatGPT/new hypervisor/.references/check-delivery.py", line 20, in <module>
+    subprocess.run(['/usr/bin/git', 'apply', '--check', str(patch)], cwd=copy, check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/git', 'apply', '--check', '/mnt/e/桌面/Hypervisor-Projects/qemu_virtio_lab/virtio-lab-qemu-9.2.0.patch']' returned non-zero exit status 1.

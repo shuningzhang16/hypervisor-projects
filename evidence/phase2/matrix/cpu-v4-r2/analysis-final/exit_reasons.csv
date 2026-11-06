@@ -1,0 +1,10 @@
+tid,isa,reason,count
+1421,unspecified,interrupt,31
+1421,unspecified,io,1578
+1422,unspecified,interrupt,43
+1422,unspecified,io,1572
+1423,unspecified,interrupt,35
+1423,unspecified,io,1578
+1424,unspecified,interrupt,33
+1424,unspecified,io,1578
+1424,unspecified,npf,1

@@ -1,0 +1,19 @@
+[
+  "/var/tmp/hypervisor-build.0923va/qemu-9.2.0/build/qemu-system-x86_64",
+  "-machine",
+  "q35,accel=tcg",
+  "-m",
+  "64",
+  "-S",
+  "-nodefaults",
+  "-display",
+  "none",
+  "-device",
+  "virtio-lab-pci,addr=4.0",
+  "-qtest",
+  "unix:/tmp/lab-lifecycle-2xp9wzc0/qtest,server=on,wait=off",
+  "-qtest-log",
+  "/dev/null",
+  "-qmp",
+  "unix:/tmp/lab-lifecycle-2xp9wzc0/qmp,server=on,wait=off"
+]

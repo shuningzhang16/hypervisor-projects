@@ -1,0 +1,22 @@
+kernel=6.6.114.1-microsoft-standard-WSL2
+cpu=AMD Ryzen 7 5800H with Radeon Graphics
+crw-rw---- 1 root kvm 10, 232 Nov  4 18:41 /dev/kvm
+kvm_api_version=12
+tracefs=/sys/kernel/tracing
+AVAILABLE kvm:kvm_entry
+AVAILABLE kvm:kvm_exit
+AVAILABLE kvm:kvm_mmio
+AVAILABLE kvm:kvm_pio
+AVAILABLE sched:sched_switch
+AVAILABLE sched:sched_wakeup
+trace-cmd version 2.9.6 (not-a-git-repo)
+Traceback (most recent call last):
+  File "/mnt/e/桌面/Hypervisor-Projects-work/kvm_exit_analyzer/run_experiments.py", line 92, in <module>
+    main()
+  File "/mnt/e/桌面/Hypervisor-Projects-work/kvm_exit_analyzer/run_experiments.py", line 86, in main
+    run_one(args.out, args.binary, mode, vcpus, args.seconds, repeat)
+  File "/mnt/e/桌面/Hypervisor-Projects-work/kvm_exit_analyzer/run_experiments.py", line 48, in run_one
+    subprocess.run([sys.executable, str(analyzer), str(output / 'capture/trace.txt'),
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '/mnt/e/桌面/Hypervisor-Projects-work/kvm_exit_analyzer/analyze_trace.py', '/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/first-kvm/cpu-v1-r1/capture/trace.txt', '--out', '/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/first-kvm/cpu-v1-r1/analysis']' returned non-zero exit status 1.

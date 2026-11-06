@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/.codex/visualizations/2026/11/04/01a1a5cc-6362-7610-b97d-b4cd3ae89d23/hypervisor-guest-driver/qemu_virtio_lab/tests/guest_driver.py", line 115, in <module>
+    run(args)
+  File "/mnt/c/Users/Administrator/.codex/visualizations/2026/11/04/01a1a5cc-6362-7610-b97d-b4cd3ae89d23/hypervisor-guest-driver/qemu_virtio_lab/tests/guest_driver.py", line 82, in run
+    command(f'smoke {packed}')
+  File "/mnt/c/Users/Administrator/.codex/visualizations/2026/11/04/01a1a5cc-6362-7610-b97d-b4cd3ae89d23/hypervisor-guest-driver/qemu_virtio_lab/tests/guest_driver.py", line 37, in command
+    lines = run_command(guest, text, log, timeout)
+  File "/mnt/c/Users/Administrator/.codex/visualizations/2026/11/04/01a1a5cc-6362-7610-b97d-b4cd3ae89d23/hypervisor-guest-driver/qemu_virtio_lab/tests/guest_driver.py", line 20, in run_command
+    raise RuntimeError(f'Guest command {command!r} failed: {lines[-10:]}')
+RuntimeError: Guest command 'smoke 0' failed: ['[    9.028018] pci 0000:01:00.0: [1af4:107f] type 00 class 0x00ff00', '[    9.033709] pci 0000:01:00.0: reg 0x20: [mem 0x00000000-0x00003fff 64bit pref]', '[    9.038382] pci 0000:01:00.0: enabling Extended Tags', '[    9.049970] pci 0000:01:00.0: BAR 4: assigned [mem 0xfe800000-0xfe803fff 64bit pref]', '[   10.010408] virtio-pci 0000:01:00.0: enabling device (0000 -> 0002)', 'FAIL: one lab misc device (errno=0 Success)', 'LAB_DONE 1']

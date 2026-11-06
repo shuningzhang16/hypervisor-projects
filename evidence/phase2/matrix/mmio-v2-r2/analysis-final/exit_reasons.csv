@@ -1,0 +1,5 @@
+tid,isa,reason,count
+2469,unspecified,interrupt,8
+2469,unspecified,npf,1703
+2470,unspecified,interrupt,5
+2470,unspecified,npf,1700

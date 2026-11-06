@@ -1,0 +1,7 @@
+{
+  "requests": 65568,
+  "reset_cycles": 128,
+  "index_wraps": 1,
+  "qtest_wall_seconds": 99.168938013,
+  "performance_scope": "qtest IPC + emulation; not KVM performance"
+}

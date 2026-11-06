@@ -1,0 +1,3 @@
+NOT RUN: the QEMU link step had not finished when the test was first invoked.
+subprocess.Popen raised FileNotFoundError for qemu-system-x86_64.
+This attempt did not launch a device; subsequent attempts waited for completed build.

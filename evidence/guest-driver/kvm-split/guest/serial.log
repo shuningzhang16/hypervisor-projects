@@ -1,0 +1,1537 @@
+[    0.000000] Linux version 5.15.0-194-generic (buildd@lcy02-amd64-103) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #204-Ubuntu SMP Wed Sep 2 13:09:23 UTC 2026 (Ubuntu 5.15.0-194.204-generic 5.15.209)
+[    0.000000] Command line: console=ttyS0 rdinit=/init panic=-1
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000001ffdcfff] usable
+[    0.000000] BIOS-e820: [mem 0x000000001ffdd000-0x000000001fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000b0000000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fed1c000-0x00000000fed1ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (Q35 + ICH9, 2009), BIOS rel-1.16.3-0-ga6ed6b701f0a-prebuilt.qemu.org 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 1a601001, primary cpu clock
+[    0.000003] kvm-clock: using sched offset of 493565458 cycles
+[    0.000007] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000012] tsc: Detected 3193.920 MHz processor
+[    0.000650] last_pfn = 0x1ffdd max_arch_pfn = 0x400000000
+[    0.001243] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.005258] found SMP MP-table at [mem 0x000f5470-0x000f547f]
+[    0.005598] Using GB pages for direct mapping
+[    0.005988] RAMDISK: [mem 0x1fe0f000-0x1ffcffff]
+[    0.006058] ACPI: Early table checksum verification disabled
+[    0.006087] ACPI: RSDP 0x00000000000F52A0 000014 (v00 BOCHS )
+[    0.006095] ACPI: RSDT 0x000000001FFE2407 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.006103] ACPI: FACP 0x000000001FFE21F7 0000F4 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.006111] ACPI: DSDT 0x000000001FFE0040 0021B7 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.006116] ACPI: FACS 0x000000001FFE0000 000040
+[    0.006120] ACPI: APIC 0x000000001FFE22EB 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.006124] ACPI: HPET 0x000000001FFE236B 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.006197] ACPI: MCFG 0x000000001FFE23A3 00003C (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.006214] ACPI: WAET 0x000000001FFE23DF 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.006224] ACPI: Reserving FACP table memory at [mem 0x1ffe21f7-0x1ffe22ea]
+[    0.006230] ACPI: Reserving DSDT table memory at [mem 0x1ffe0040-0x1ffe21f6]
+[    0.006233] ACPI: Reserving FACS table memory at [mem 0x1ffe0000-0x1ffe003f]
+[    0.006234] ACPI: Reserving APIC table memory at [mem 0x1ffe22eb-0x1ffe236a]
+[    0.006236] ACPI: Reserving HPET table memory at [mem 0x1ffe236b-0x1ffe23a2]
+[    0.006237] ACPI: Reserving MCFG table memory at [mem 0x1ffe23a3-0x1ffe23de]
+[    0.006239] ACPI: Reserving WAET table memory at [mem 0x1ffe23df-0x1ffe2406]
+[    0.007339] No NUMA configuration found
+[    0.007344] Faking a node at [mem 0x0000000000000000-0x000000001ffdcfff]
+[    0.007357] NODE_DATA(0) allocated [mem 0x1fde5000-0x1fe0efff]
+[    0.010348] Zone ranges:
+[    0.010354]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.010358]   DMA32    [mem 0x0000000001000000-0x000000001ffdcfff]
+[    0.010362]   Normal   empty
+[    0.010364]   Device   empty
+[    0.010365] Movable zone start for each node
+[    0.010368] Early memory node ranges
+[    0.010369]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.010372]   node   0: [mem 0x0000000000100000-0x000000001ffdcfff]
+[    0.010374] Initmem setup node 0 [mem 0x0000000000001000-0x000000001ffdcfff]
+[    0.013135] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.013173] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.022025] On node 0, zone DMA32: 35 pages in unavailable ranges
+[    0.024178] ACPI: PM-Timer IO Port: 0x608
+[    0.024216] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.024404] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.024415] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.024418] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.024421] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.024423] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.024425] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.024429] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.024431] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.024440] TSC deadline timer available
+[    0.024461] smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    0.024537] kvm-guest: KVM setup pv remote TLB flush
+[    0.024562] kvm-guest: setup PV sched yield
+[    0.024598] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.024602] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x000fffff]
+[    0.024605] [mem 0x20000000-0xafffffff] available for PCI devices
+[    0.024607] Booting paravirtualized kernel on KVM
+[    0.024611] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.024620] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    0.027391] percpu: Embedded 62 pages/cpu s217088 r8192 d28672 u1048576
+[    0.027487] kvm-guest: setup async PF for cpu 0
+[    0.027516] kvm-guest: stealtime: cpu 0, msr 1f234080
+[    0.027537] kvm-guest: PV spinlocks enabled
+[    0.027540] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.027560] Built 1 zonelists, mobility grouping on.  Total pages: 128733
+[    0.027563] Policy zone: DMA32
+[    0.027565] Kernel command line: console=ttyS0 rdinit=/init panic=-1
+[    0.027667] Dentry cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.027692] Inode-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.027781] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.031463] Memory: 453972K/523756K available (16393K kernel code, 4402K rwdata, 11004K rodata, 3292K init, 18768K bss, 69528K reserved, 0K cma-reserved)
+[    0.032320] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.032385] ftrace: allocating 50910 entries in 199 pages
+[    0.065389] ftrace: allocated 199 pages with 5 groups
+[    0.068192] rcu: Hierarchical RCU implementation.
+[    0.068197] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+[    0.068201] 	Rude variant of Tasks RCU enabled.
+[    0.068202] 	Tracing variant of Tasks RCU enabled.
+[    0.068204] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.068205] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.074901] NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+[    0.075391] random: crng init done
+[    0.075685] Console: colour *CGA 80x25
+[    0.614121] printk: console [ttyS0] enabled
+[    0.617537] ACPI: Core revision 20210730
+[    0.620926] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.629066] APIC: Switch to symmetric I/O mode setup
+[    0.634321] x2apic enabled
+[    0.637757] Switched APIC routing to physical x2apic.
+[    0.641955] kvm-guest: setup PV IPIs
+[    0.650917] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.655295] tsc: Marking TSC unstable due to TSCs unsynchronized
+[    0.659732] Calibrating delay loop (skipped) preset value.. 6387.84 BogoMIPS (lpj=12775680)
+[    0.664278] AMD Zen1 FPDSS bug detected, enabling mitigation.
+[    0.668214] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+[    0.676275] Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+[    0.679732] Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+[    0.683769] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.687734] Spectre V2 : Mitigation: Retpolines
+[    0.691731] Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+[    0.695734] Spectre V2 : Enabling Restricted Speculation for firmware calls
+[    0.699740] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    0.703734] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+[    0.707734] active return thunk: srso_alias_return_thunk
+[    0.711731] Speculative Return Stack Overflow: Mitigation: safe RET
+[    0.715735] Transient Scheduler Attacks: Forcing mitigation on in a VM
+[    0.719733] Transient Scheduler Attacks: Vulnerable: Clear CPU buffers attempted, no microcode
+[    0.723960] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.727733] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.731731] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.735758] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.739733] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'compacted' format.
+[    0.796337] Freeing SMP alternatives memory: 44K
+[    0.799736] pid_max: default: 32768 minimum: 301
+[    0.803804] LSM: Security Framework initializing
+[    0.807769] landlock: Up and running.
+[    0.811733] Yama: becoming mindful.
+[    0.819770] AppArmor: AppArmor initialized
+[    0.827846] Mount-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.831741] Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.840793] smpboot: CPU0: AMD Ryzen 7 5800H with Radeon Graphics (family: 0x19, model: 0x50, stepping: 0x0)
+[    0.844402] Performance Events: Fam17h+ core perfctr, AMD PMU driver.
+[    0.847767] ... version:                0
+[    0.851750] ... bit width:              48
+[    0.855751] ... generic registers:      6
+[    0.859768] ... value mask:             0000ffffffffffff
+[    0.863750] ... max period:             00007fffffffffff
+[    0.867749] ... fixed-purpose events:   0
+[    0.871752] ... event mask:             000000000000003f
+[    0.875964] signal: max sigframe size: 1776
+[    0.880179] rcu: Hierarchical SRCU implementation.
+[    0.885092] smp: Bringing up secondary CPUs ...
+[    0.888404] x86: Booting SMP configuration:
+[    0.891772] .... node  #0, CPUs:      #1
+[    0.564356] kvm-clock: cpu 1, msr 1a601041, secondary cpu clock
+[    0.899838] kvm-guest: setup async PF for cpu 1
+[    0.903724] kvm-guest: stealtime: cpu 1, msr 1f334080
+[    0.916137] smp: Brought up 1 node, 2 CPUs
+[    0.919775] smpboot: Max logical packages: 1
+[    0.923777] smpboot: Total of 2 processors activated (12775.68 BogoMIPS)
+[    0.930055] devtmpfs: initialized
+[    0.931971] x86/mm: Memory block size: 128MB
+[    0.936364] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.939763] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.943900] pinctrl core: initialized pinctrl subsystem
+[    0.948611] PM: RTC time: 16:07:40, date: 2026-11-05
+[    0.952208] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.956060] DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+[    0.959825] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.963773] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.967815] audit: initializing netlink subsys (disabled)
+[    0.971905] audit: type=2000 audit(1793894860.185:1): state=initialized audit_enabled=0 res=1
+[    0.972297] thermal_sys: Registered thermal governor 'fair_share'
+[    0.975755] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.979764] thermal_sys: Registered thermal governor 'step_wise'
+[    0.983752] thermal_sys: Registered thermal governor 'user_space'
+[    0.987752] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.991796] cpuidle: using governor ladder
+[    0.999771] cpuidle: using governor menu
+[    1.008107] ACPI: bus type PCI registered
+[    1.011752] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    1.016497] PCI: MMCONFIG for domain 0000 [bus 00-ff] at [mem 0xb0000000-0xbfffffff] (base 0xb0000000)
+[    1.019907] PCI: MMCONFIG at [mem 0xb0000000-0xbfffffff] reserved in E820
+[    1.023925] PCI: Using configuration type 1 for base access
+[    1.035994] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    1.040059] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[    1.043789] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    1.051992] ACPI: Added _OSI(Module Device)
+[    1.055762] ACPI: Added _OSI(Processor Device)
+[    1.059751] ACPI: Added _OSI(Processor Aggregator Device)
+[    1.063759] ACPI: Added _OSI(Linux-Dell-Video)
+[    1.067755] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+[    1.071754] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+[    1.084676] ACPI: 1 ACPI AML tables successfully acquired and loaded
+[    1.091458] ACPI: Interpreter enabled
+[    1.091866] ACPI: PM: (supports S0 S3 S4 S5)
+[    1.095751] ACPI: Using IOAPIC for interrupt routing
+[    1.099849] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    1.103751] PCI: Using E820 reservations for host bridge windows
+[    1.108304] ACPI: Enabled 2 GPEs in block 00 to 3F
+[    1.120062] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    1.123782] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    1.128134] acpi PNP0A08:00: _OSC: platform does not support [PCIeHotplug LTR DPC]
+[    1.132182] acpi PNP0A08:00: _OSC: OS now controls [SHPCHotplug PME AER PCIeCapability]
+[    1.136643] PCI host bridge to bus 0000:00
+[    1.139756] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    1.143754] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    1.147761] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    1.151754] pci_bus 0000:00: root bus resource [mem 0x20000000-0xafffffff window]
+[    1.155754] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    1.159755] pci_bus 0000:00: root bus resource [mem 0x100000000-0x8ffffffff window]
+[    1.163776] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.168488] pci 0000:00:00.0: [8086:29c0] type 00 class 0x060000
+[    1.180691] pci 0000:00:01.0: [1af4:1001] type 00 class 0x010000
+[    1.190895] pci 0000:00:01.0: reg 0x10: [io  0xc000-0xc07f]
+[    1.191800] pci 0000:00:01.0: reg 0x14: [mem 0xfe640000-0xfe640fff]
+[    1.196025] pci 0000:00:01.0: reg 0x20: [mem 0xfea00000-0xfea03fff 64bit pref]
+[    1.206638] pci 0000:00:02.0: [1af4:1000] type 00 class 0x020000
+[    1.211751] pci 0000:00:02.0: reg 0x10: [io  0xc0c0-0xc0df]
+[    1.215864] pci 0000:00:02.0: reg 0x14: [mem 0xfe641000-0xfe641fff]
+[    1.219910] pci 0000:00:02.0: reg 0x20: [mem 0xfea04000-0xfea07fff 64bit pref]
+[    1.223803] pci 0000:00:02.0: reg 0x30: [mem 0xfe600000-0xfe63ffff pref]
+[    1.234292] pci 0000:00:03.0: [1b36:000c] type 01 class 0x060400
+[    1.238381] pci 0000:00:03.0: reg 0x10: [mem 0xfe642000-0xfe642fff]
+[    1.241438] pci 0000:00:03.0: enabling Extended Tags
+[    1.332032] pci 0000:00:1f.0: [8086:2918] type 00 class 0x060100
+[    1.337717] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+[    1.341349] pci 0000:00:1f.2: [8086:2922] type 00 class 0x010601
+[    1.347552] pci 0000:00:1f.2: reg 0x20: [io  0xc0e0-0xc0ff]
+[    1.347792] pci 0000:00:1f.2: reg 0x24: [mem 0xfe643000-0xfe643fff]
+[    1.353948] pci 0000:00:1f.3: [8086:2930] type 00 class 0x0c0500
+[    1.358517] pci 0000:00:1f.3: reg 0x20: [io  0x0700-0x073f]
+[    1.364566] acpiphp: Slot [0] registered
+[    1.368496] pci 0000:01:00.0: [1af4:107f] type 00 class 0x00ff00
+[    1.374269] pci 0000:01:00.0: reg 0x20: [mem 0xfe800000-0xfe803fff 64bit pref]
+[    1.376043] pci 0000:01:00.0: enabling Extended Tags
+[    1.483691] pci 0000:00:03.0: PCI bridge to [bus 01]
+[    1.483949] pci 0000:00:03.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+[    1.487916] pci 0000:00:03.0:   bridge window [mem 0xfe800000-0xfe9fffff 64bit pref]
+[    1.494538] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    1.496307] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    1.500140] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    1.504401] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    1.508135] ACPI: PCI: Interrupt link LNKE configured for IRQ 10
+[    1.512190] ACPI: PCI: Interrupt link LNKF configured for IRQ 10
+[    1.516190] ACPI: PCI: Interrupt link LNKG configured for IRQ 11
+[    1.520129] ACPI: PCI: Interrupt link LNKH configured for IRQ 11
+[    1.523949] ACPI: PCI: Interrupt link GSIA configured for IRQ 16
+[    1.527799] ACPI: PCI: Interrupt link GSIB configured for IRQ 17
+[    1.531835] ACPI: PCI: Interrupt link GSIC configured for IRQ 18
+[    1.535803] ACPI: PCI: Interrupt link GSID configured for IRQ 19
+[    1.539791] ACPI: PCI: Interrupt link GSIE configured for IRQ 20
+[    1.543796] ACPI: PCI: Interrupt link GSIF configured for IRQ 21
+[    1.547802] ACPI: PCI: Interrupt link GSIG configured for IRQ 22
+[    1.551807] ACPI: PCI: Interrupt link GSIH configured for IRQ 23
+[    1.556943] iommu: Default domain type: Translated 
+[    1.559751] iommu: DMA domain TLB invalidation policy: lazy mode 
+[    1.568330] SCSI subsystem initialized
+[    1.571895] vgaarb: loaded
+[    1.575807] ACPI: bus type USB registered
+[    1.579798] usbcore: registered new interface driver usbfs
+[    1.583797] usbcore: registered new interface driver hub
+[    1.587777] usbcore: registered new device driver usb
+[    1.591858] pps_core: LinuxPPS API ver. 1 registered
+[    1.595751] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    1.599771] PTP clock support registered
+[    1.603867] EDAC MC: Ver: 3.0.0
+[    1.608106] NetLabel: Initializing
+[    1.611748] NetLabel:  domain hash size = 128
+[    1.615746] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    1.619822] NetLabel:  unlabeled traffic allowed by default
+[    1.627871] PCI: Using ACPI for IRQ routing
+[    2.767897] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    2.771752] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    2.779970] clocksource: Switched to clocksource kvm-clock
+[    2.840032] VFS: Disk quotas dquot_6.6.0
+[    2.846076] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.855141] AppArmor: AppArmor Filesystem Enabled
+[    2.862014] pnp: PnP ACPI init
+[    2.867576] system 00:04: [mem 0xb0000000-0xbfffffff window] has been reserved
+[    2.877678] pnp: PnP ACPI: found 5 devices
+[    2.895958] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    2.906886] NET: Registered PF_INET protocol family
+[    2.912027] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    2.922834] tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    2.935309] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    2.947347] TCP established hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    2.956464] TCP bind hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    2.964217] TCP: Hash tables configured (established 4096 bind 4096)
+[    2.972734] MPTCP token hash table entries: 512 (order: 2, 12288 bytes, linear)
+[    2.982842] UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    2.990271] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    3.001340] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    3.007975] NET: Registered PF_XDP protocol family
+[    3.013776] pci 0000:00:03.0: bridge window [io  0x1000-0x0fff] to [bus 01] add_size 1000
+[    3.021998] pci 0000:00:03.0: BAR 13: assigned [io  0x1000-0x1fff]
+[    3.030169] pci 0000:00:03.0: PCI bridge to [bus 01]
+[    3.038961] pci 0000:00:03.0:   bridge window [io  0x1000-0x1fff]
+[    3.049636] pci 0000:00:03.0:   bridge window [mem 0xfe400000-0xfe5fffff]
+[    3.059220] pci 0000:00:03.0:   bridge window [mem 0xfe800000-0xfe9fffff 64bit pref]
+[    3.071814] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    3.080854] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    3.090806] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    3.100237] pci_bus 0000:00: resource 7 [mem 0x20000000-0xafffffff window]
+[    3.111736] pci_bus 0000:00: resource 8 [mem 0xc0000000-0xfebfffff window]
+[    3.118817] pci_bus 0000:00: resource 9 [mem 0x100000000-0x8ffffffff window]
+[    3.128133] pci_bus 0000:01: resource 0 [io  0x1000-0x1fff]
+[    3.136417] pci_bus 0000:01: resource 1 [mem 0xfe400000-0xfe5fffff]
+[    3.144822] pci_bus 0000:01: resource 2 [mem 0xfe800000-0xfe9fffff 64bit pref]
+[    3.156099] PCI: CLS 0 bytes, default 64
+[    3.161174] Trying to unpack rootfs image as initramfs...
+[    3.167867] Initialise system trusted keyrings
+[    3.173165] Key type blacklist registered
+[    3.177986] workingset: timestamp_bits=36 max_order=17 bucket_order=0
+[    3.190979] zbud: loaded
+[    3.195662] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    3.203224] fuse: init (API version 7.34)
+[    3.207813] Freeing initrd memory: 1796K
+[    3.212593] integrity: Platform Keyring initialized
+[    3.224505] Key type asymmetric registered
+[    3.228627] Asymmetric key parser 'x509' registered
+[    3.233683] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    3.242115] io scheduler mq-deadline registered
+[    3.248811] ACPI: \_SB_.GSIH: Enabled at IRQ 23
+[    3.257169] pcieport 0000:00:03.0: PME: Signaling with IRQ 24
+[    3.264814] pcieport 0000:00:03.0: AER: enabled with IRQ 24
+[    3.272505] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    3.279736] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    3.287715] ACPI: button: Power Button [PWRF]
+[    3.294705] ACPI: \_SB_.GSIF: Enabled at IRQ 21
+[    3.307078] ACPI: \_SB_.GSIG: Enabled at IRQ 22
+[    3.322439] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    3.382231] 00:02: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    3.395183] Linux agpgart interface v0.103
+[    3.405871] loop: module loaded
+[    3.410722] tun: Universal TUN/TAP device driver, 1.6
+[    3.417186] PPP generic driver version 2.4.2
+[    3.422716] VFIO - User Level meta-driver version: 0.3
+[    3.428594] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.435964] ehci-pci: EHCI PCI platform driver
+[    3.440950] ehci-platform: EHCI generic platform driver
+[    3.447535] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    3.454694] ohci-pci: OHCI PCI platform driver
+[    3.459799] ohci-platform: OHCI generic platform driver
+[    3.466172] uhci_hcd: USB Universal Host Controller Interface driver
+[    3.472892] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    3.484630] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    3.490726] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    3.497392] mousedev: PS/2 mouse device common for all mice
+[    3.504956] rtc_cmos 00:03: RTC can wake from S4
+[    3.507146] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    3.518871] rtc_cmos 00:03: registered as rtc0
+[    3.530606] rtc_cmos 00:03: setting system clock to 2026-11-05T16:07:43 UTC (1793894863)
+[    3.540197] rtc_cmos 00:03: alarms up to one day, y3k, 242 bytes nvram, hpet irqs
+[    3.549544] i2c_dev: i2c /dev entries driver
+[    3.554436] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    3.567584] device-mapper: uevent: version 1.0.3
+[    3.572911] device-mapper: ioctl: 4.45.0-ioctl (2021-03-22) initialised: dm-devel@redhat.com
+[    3.581982] ledtrig-cpu: registered to indicate activity on CPUs
+[    3.588501] drop_monitor: Initializing network drop monitor service
+[    3.595878] NET: Registered PF_INET6 protocol family
+[    3.608801] Segment Routing with IPv6
+[    3.612861] In-situ OAM (IOAM) with IPv6
+[    3.617421] NET: Registered PF_PACKET protocol family
+[    3.623383] Key type dns_resolver registered
+[    3.628811] IPI shorthand broadcast: enabled
+[    3.634113] sched_clock: Marking stable (3073611361, 560356765)->(4151908819, -517940693)
+[    3.645902] registered taskstats version 1
+[    3.650735] Loading compiled-in X.509 certificates
+[    3.657443] Loaded X.509 cert 'Build time autogenerated kernel key: 9d83e2f27fa0bf7fafda6a7a37a8a6eaebc407a5'
+[    3.669171] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing 2025 Kmod: d541cef61dc7e793b7eb7e899970a2eef0b5dc8c'
+[    3.682071] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+[    3.693464] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing 2025 Kmod: 4627603d2357a2a3f81006370894c221175893e9'
+[    3.705521] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[    3.716059] blacklist: Loading compiled-in revocation X.509 certificates
+[    3.722865] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+[    3.733714] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+[    3.745278] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+[    3.757497] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+[    3.768682] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+[    3.781639] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+[    3.793651] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+[    3.804857] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+[    3.817428] zswap: loaded using pool lzo/zbud
+[    3.823128] Key type .fscrypt registered
+[    3.827218] Key type fscrypt-provisioning registered
+[    3.833994] Key type encrypted registered
+[    3.838183] AppArmor: AppArmor sha1 policy hashing enabled
+[    3.843822] ima: No TPM chip found, activating TPM-bypass!
+[    3.849263] Loading compiled-in module X.509 certificates
+[    3.855726] Loaded X.509 cert 'Build time autogenerated kernel key: 9d83e2f27fa0bf7fafda6a7a37a8a6eaebc407a5'
+[    3.866117] ima: Allocated hash algorithm: sha1
+[    3.870845] ima: No architecture policies found
+[    3.875908] evm: Initialising EVM extended attributes:
+[    3.881324] evm: security.selinux
+[    3.885299] evm: security.SMACK64
+[    3.889352] evm: security.SMACK64EXEC
+[    3.893138] evm: security.SMACK64TRANSMUTE
+[    3.897378] evm: security.SMACK64MMAP
+[    3.901321] evm: security.apparmor
+[    3.905223] evm: security.ima
+[    3.908473] evm: security.capability
+[    3.912201] evm: HMAC attrs: 0x1
+[    3.916637] PM:   Magic number: 2:169:135
+[    3.922004] RAS: Correctable Errors collector initialized.
+[    3.927804] clk: Disabling unused clocks
+[    3.936342] Freeing unused decrypted memory: 2036K
+[    3.942390] Freeing unused kernel image (initmem) memory: 3292K
+[    3.948557] Write protecting the kernel read-only data: 30720k
+[    3.956260] Freeing unused kernel image (text/rodata gap) memory: 2036K
+[    3.964338] Freeing unused kernel image (rodata/data gap) memory: 1284K
+[    4.073310] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    4.080408] Run /init as init process
+[    4.098264] virtio_lab: loading out-of-tree module taints kernel.
+[    4.105371] virtio_lab: module verification failed: signature and/or required key missing - tainting kernel
+[    4.118522] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_READY
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+LAB_PASS concurrent requests=1024 callers=4 serialized_in_driver=1
+LAB_DONE 0
+LAB_LATENCY,1000000,273149,297786,309238
+LAB_LATENCY,1000001,107725,215720,226410
+LAB_LATENCY,1000002,179982,289089,299659
+LAB_LATENCY,1000003,232131,340447,351207
+LAB_LATENCY,1000004,226110,250696,260996
+LAB_LATENCY,1000005,80904,100731,109798
+LAB_LATENCY,1000006,64562,92866,102354
+LAB_LATENCY,1000007,173921,196403,206843
+LAB_LATENCY,1000008,71376,90883,98077
+LAB_LATENCY,1000009,113235,145316,153551
+LAB_LATENCY,1000010,82657,101923,111241
+LAB_LATENCY,1000011,62990,81425,89049
+LAB_LATENCY,1000012,60746,79201,86164
+LAB_LATENCY,1000013,59894,77838,84601
+LAB_LATENCY,1000014,59973,78218,84941
+LAB_LATENCY,1000015,59504,77728,84290
+LAB_LATENCY,1000016,60224,78469,85192
+LAB_LATENCY,1000017,59603,77818,84431
+LAB_LATENCY,1000018,252780,277802,287591
+LAB_LATENCY,1000019,81590,101042,110450
+LAB_LATENCY,1000020,64518,83028,90341
+LAB_LATENCY,1000021,60911,79251,86224
+LAB_LATENCY,1000022,60250,78389,85181
+LAB_LATENCY,1000023,59649,77988,84721
+LAB_LATENCY,1000024,60301,78600,85332
+LAB_LATENCY,1000025,59940,78269,84861
+LAB_LATENCY,1000026,78445,97275,104338
+LAB_LATENCY,1000027,61001,79371,86534
+LAB_LATENCY,1000028,60110,78440,85162
+LAB_LATENCY,1000029,60290,78700,85532
+LAB_LATENCY,1000030,60270,78539,85101
+LAB_LATENCY,1000031,92180,112513,196764
+LAB_LATENCY,1000032,87872,110670,118425
+LAB_LATENCY,1000033,75359,94109,100932
+LAB_LATENCY,1000034,95948,124176,148632
+LAB_LATENCY,1000035,119152,141870,151468
+LAB_LATENCY,1000036,70389,89199,97355
+LAB_LATENCY,1000037,93433,115900,204318
+LAB_LATENCY,1000038,64498,82918,91003
+LAB_LATENCY,1000039,61001,79331,86264
+LAB_LATENCY,1000040,60842,79251,85903
+LAB_LATENCY,1000041,60701,79010,85703
+LAB_LATENCY,1000042,59518,116842,125018
+LAB_LATENCY,1000043,121967,142941,152299
+LAB_LATENCY,1000044,65340,83809,91494
+LAB_LATENCY,1000045,60911,79050,85923
+LAB_LATENCY,1000046,60080,78279,84982
+LAB_LATENCY,1000047,59950,78058,84771
+LAB_LATENCY,1000048,59899,78018,84591
+LAB_LATENCY,1000049,59900,77998,84640
+LAB_LATENCY,1000050,59209,77458,84140
+LAB_LATENCY,1000051,59278,77327,84079
+LAB_LATENCY,1000052,59498,77787,84430
+LAB_LATENCY,1000053,111037,117663,125769
+LAB_LATENCY,1000054,131384,156166,238504
+LAB_LATENCY,1000055,70289,89120,97545
+LAB_LATENCY,1000056,61682,80433,87356
+LAB_LATENCY,1000057,60350,78620,85302
+LAB_LATENCY,1000058,60289,78549,85082
+LAB_LATENCY,1000059,60029,78319,84941
+LAB_LATENCY,1000060,81580,103467,134004
+LAB_LATENCY,1000061,63055,81485,89470
+LAB_LATENCY,1000062,94404,113846,120840
+LAB_LATENCY,1000063,118280,176315,183228
+LAB_LATENCY,1000064,201658,227051,235367
+LAB_LATENCY,1000065,137676,155756,165054
+LAB_LATENCY,1000066,66301,87146,95000
+LAB_LATENCY,1000067,62163,120089,128424
+LAB_LATENCY,1000068,78254,98658,108497
+LAB_LATENCY,1000069,192651,217579,230202
+LAB_LATENCY,1000070,73119,92907,102264
+LAB_LATENCY,1000071,107675,131460,142691
+LAB_LATENCY,1000072,66116,85092,92857
+LAB_LATENCY,1000073,62189,80754,87716
+LAB_LATENCY,1000074,60766,79161,85773
+LAB_LATENCY,1000075,60074,78379,85072
+LAB_LATENCY,1000076,60024,78379,85182
+LAB_LATENCY,1000077,197235,221491,229156
+LAB_LATENCY,1000078,127402,149755,157759
+LAB_LATENCY,1000079,68130,86765,94029
+LAB_LATENCY,1000080,74562,93227,100341
+LAB_LATENCY,1000081,62108,80753,87877
+LAB_LATENCY,1000082,70895,74662,81986
+LAB_LATENCY,1000083,81294,103967,113465
+LAB_LATENCY,1000084,79862,87186,96383
+LAB_LATENCY,1000085,182106,226580,239225
+LAB_LATENCY,1000086,108275,139244,151749
+LAB_LATENCY,1000087,100261,104789,117332
+LAB_LATENCY,1000088,76315,114277,124286
+LAB_LATENCY,1000089,69482,88328,96694
+LAB_LATENCY,1000090,60936,79351,86464
+LAB_LATENCY,1000091,60074,78138,84871
+LAB_LATENCY,1000092,59624,197015,204468
+LAB_LATENCY,1000093,122273,149845,159163
+LAB_LATENCY,1000094,74151,93267,101603
+LAB_LATENCY,1000095,61778,80052,87356
+LAB_LATENCY,1000096,60355,78800,85473
+LAB_LATENCY,1000097,93508,113796,213145
+LAB_LATENCY,1000098,84701,107123,154374
+LAB_LATENCY,1000099,292896,417974,429316
+LAB_LATENCY,1000100,207654,340777,352539
+LAB_LATENCY,1000101,152199,275147,286890
+LAB_LATENCY,1000102,136725,283148,294440
+LAB_LATENCY,1000103,188975,217874,230167
+LAB_LATENCY,1000104,99505,122232,131370
+LAB_LATENCY,1000105,101108,214929,223985
+LAB_LATENCY,1000106,197762,381946,414848
+LAB_LATENCY,1000107,154790,296293,311582
+LAB_LATENCY,1000108,131525,241217,255394
+LAB_LATENCY,1000109,123480,222853,233534
+LAB_LATENCY,1000110,97761,118395,127623
+LAB_LATENCY,1000111,64548,102365,110830
+LAB_LATENCY,1000112,79807,98958,108086
+LAB_LATENCY,1000113,62224,80904,88287
+LAB_LATENCY,1000114,148598,196303,204699
+LAB_LATENCY,1000115,81831,100791,110049
+LAB_LATENCY,1000116,214494,328174,338052
+LAB_LATENCY,1000117,107750,129215,139024
+LAB_LATENCY,1000118,69628,187797,197004
+LAB_LATENCY,1000119,101058,123515,133062
+LAB_LATENCY,1000120,64899,83348,90953
+LAB_LATENCY,1000121,61141,79751,86704
+LAB_LATENCY,1000122,111638,138864,148422
+LAB_LATENCY,1000123,86139,106081,114127
+LAB_LATENCY,1000124,215765,339130,348818
+LAB_LATENCY,1000125,110720,211612,222332
+LAB_LATENCY,1000126,97756,209743,222246
+LAB_LATENCY,1000127,117819,227372,240668
+LAB_LATENCY,1000128,97841,118405,127472
+LAB_LATENCY,1000129,64929,83659,91013
+LAB_LATENCY,1000130,60741,79000,85963
+LAB_LATENCY,1000131,59759,78098,84771
+LAB_LATENCY,1000132,59679,77817,84480
+LAB_LATENCY,1000133,59589,77878,84601
+LAB_LATENCY,1000134,77613,96203,103075
+LAB_LATENCY,1000135,198152,305076,314624
+LAB_LATENCY,1000136,104298,207569,219061
+LAB_LATENCY,1000137,103863,207460,218822
+LAB_LATENCY,1000138,100972,149183,159423
+LAB_LATENCY,1000139,160455,270003,280303
+LAB_LATENCY,1000140,105581,127783,137381
+LAB_LATENCY,1000141,67218,86284,93748
+LAB_LATENCY,1000142,61768,80503,87516
+LAB_LATENCY,1000143,135898,158631,166126
+LAB_LATENCY,1000144,82617,101653,109257
+LAB_LATENCY,1000145,62198,80473,87486
+LAB_LATENCY,1000146,131329,163911,171035
+LAB_LATENCY,1000147,67708,86444,93708
+LAB_LATENCY,1000148,77898,106262,113075
+LAB_LATENCY,1000149,119016,138864,145586
+LAB_LATENCY,1000150,63380,82046,88959
+LAB_LATENCY,1000151,78168,100771,107574
+LAB_LATENCY,1000152,93187,112173,119086
+LAB_LATENCY,1000153,61086,79411,86374
+LAB_LATENCY,1000154,59644,236359,245526
+LAB_LATENCY,1000155,100902,123515,133013
+LAB_LATENCY,1000156,65194,126470,135377
+LAB_LATENCY,1000157,100130,121481,130839
+LAB_LATENCY,1000158,66035,84711,92275
+LAB_LATENCY,1000159,60966,79321,86454
+LAB_LATENCY,1000160,60164,78489,85322
+LAB_LATENCY,1000161,74081,92807,99669
+LAB_LATENCY,1000162,126319,146418,153532
+LAB_LATENCY,1000163,62419,80673,87466
+LAB_LATENCY,1000164,60024,78229,84981
+LAB_LATENCY,1000165,59794,78299,84911
+LAB_LATENCY,1000166,59574,77658,84370
+LAB_LATENCY,1000167,59123,77427,84069
+LAB_LATENCY,1000168,59453,77537,84200
+LAB_LATENCY,1000169,59914,78159,84781
+LAB_LATENCY,1000170,59373,77718,84370
+LAB_LATENCY,1000171,141429,160696,168089
+LAB_LATENCY,1000172,168450,193392,203561
+LAB_LATENCY,1000173,93554,113125,122472
+LAB_LATENCY,1000174,63496,82086,89480
+LAB_LATENCY,1000175,60380,78709,85472
+LAB_LATENCY,1000176,59418,77677,84250
+LAB_LATENCY,1000177,59730,78389,85142
+LAB_LATENCY,1000178,59989,77888,84541
+LAB_LATENCY,1000179,114383,134826,175152
+LAB_LATENCY,1000180,108792,130528,137852
+LAB_LATENCY,1000181,74617,139304,146238
+LAB_LATENCY,1000182,124292,148322,156568
+LAB_LATENCY,1000183,70399,89540,98457
+LAB_LATENCY,1000184,92993,112314,119727
+LAB_LATENCY,1000185,62976,81635,89340
+LAB_LATENCY,1000186,60510,78850,85653
+LAB_LATENCY,1000187,76752,80703,87998
+LAB_LATENCY,1000188,90718,113155,122803
+LAB_LATENCY,1000189,157004,181050,191019
+LAB_LATENCY,1000190,85122,104078,113486
+LAB_LATENCY,1000191,62659,81255,88618
+LAB_LATENCY,1000192,60605,79000,85913
+LAB_LATENCY,1000193,60245,78640,85373
+LAB_LATENCY,1000194,60104,78279,85052
+LAB_LATENCY,1000195,59784,78169,84891
+LAB_LATENCY,1000196,59483,77728,84340
+LAB_LATENCY,1000197,59744,77858,84450
+LAB_LATENCY,1000198,177567,229035,237070
+LAB_LATENCY,1000199,96484,116021,125368
+LAB_LATENCY,1000200,63390,82026,89269
+LAB_LATENCY,1000201,60845,79511,86254
+LAB_LATENCY,1000202,60215,78870,85613
+LAB_LATENCY,1000203,59964,82156,88658
+LAB_LATENCY,1000204,98697,117673,124517
+LAB_LATENCY,1000205,79762,83058,90492
+LAB_LATENCY,1000206,225268,268911,280402
+LAB_LATENCY,1000207,132231,157369,167208
+LAB_LATENCY,1000208,104929,140567,150095
+LAB_LATENCY,1000209,130198,164262,175885
+LAB_LATENCY,1000210,97175,128224,139275
+LAB_LATENCY,1000211,280543,318806,331730
+LAB_LATENCY,1000212,109889,132201,144334
+LAB_LATENCY,1000213,65565,84110,92366
+LAB_LATENCY,1000214,61677,88869,97114
+LAB_LATENCY,1000215,232521,264482,274922
+LAB_LATENCY,1000216,121821,144594,154964
+LAB_LATENCY,1000217,68580,156257,166707
+LAB_LATENCY,1000218,94079,114368,123645
+LAB_LATENCY,1000219,110320,133604,141138
+LAB_LATENCY,1000220,103787,123104,130157
+LAB_LATENCY,1000221,62980,81164,88148
+LAB_LATENCY,1000222,74712,96764,103286
+LAB_LATENCY,1000223,90823,109408,116031
+LAB_LATENCY,1000224,62228,114738,121591
+LAB_LATENCY,1000225,85893,105520,112223
+LAB_LATENCY,1000226,63741,82387,89099
+LAB_LATENCY,1000227,60065,78209,84821
+LAB_LATENCY,1000228,60195,78399,85021
+LAB_LATENCY,1000229,59342,107875,114468
+LAB_LATENCY,1000230,107314,239580,287121
+LAB_LATENCY,1000231,193022,227703,315169
+LAB_LATENCY,1000232,106096,130327,141399
+LAB_LATENCY,1000233,91359,113766,121310
+LAB_LATENCY,1000234,81049,100080,107084
+LAB_LATENCY,1000235,63055,81575,88278
+LAB_LATENCY,1000236,76080,108707,117363
+LAB_LATENCY,1000237,89074,109177,119056
+LAB_LATENCY,1000238,63195,81815,89099
+LAB_LATENCY,1000239,60089,78239,85092
+LAB_LATENCY,1000240,97159,119927,211152
+LAB_LATENCY,1000241,64518,121822,131399
+LAB_LATENCY,1000242,139981,169642,182276
+LAB_LATENCY,1000243,320859,457414,470739
+LAB_LATENCY,1000244,149379,270354,284701
+LAB_LATENCY,1000245,152354,270504,285983
+LAB_LATENCY,1000246,151172,347745,361972
+LAB_LATENCY,1000247,126380,154643,166276
+LAB_LATENCY,1000248,94921,121170,132552
+LAB_LATENCY,1000249,138995,266402,278024
+LAB_LATENCY,1000250,210039,236529,247410
+LAB_LATENCY,1000251,79591,101412,110630
+LAB_LATENCY,1000252,65985,84911,92125
+LAB_LATENCY,1000253,61617,165264,172948
+LAB_LATENCY,1000254,67828,71505,79622
+LAB_LATENCY,1000255,81726,104739,114337
+LAB_LATENCY,1000256,64512,83819,91343
+LAB_LATENCY,1000257,68020,90883,97856
+LAB_LATENCY,1000258,84670,103496,110430
+LAB_LATENCY,1000259,67809,86885,93779
+LAB_LATENCY,1000260,61767,80353,86986
+LAB_LATENCY,1000261,66206,84981,91674
+LAB_LATENCY,1000262,65544,84240,90843
+LAB_LATENCY,1000263,150857,173790,210870
+LAB_LATENCY,1000264,126090,151318,161056
+LAB_LATENCY,1000265,73058,92375,99900
+LAB_LATENCY,1000266,192786,298217,306703
+LAB_LATENCY,1000267,132192,236169,246668
+LAB_LATENCY,1000268,97245,202235,212704
+LAB_LATENCY,1000269,114979,150877,160505
+LAB_LATENCY,1000270,105280,210259,219497
+LAB_LATENCY,1000271,96143,116762,126040
+LAB_LATENCY,1000272,71556,118596,128555
+LAB_LATENCY,1000273,82527,229335,242190
+LAB_LATENCY,1000274,130758,156497,165505
+LAB_LATENCY,1000275,71816,90803,98537
+LAB_LATENCY,1000276,63180,81675,88889
+LAB_LATENCY,1000277,61728,80593,87336
+LAB_LATENCY,1000278,60074,78118,84811
+LAB_LATENCY,1000279,59633,77767,84440
+LAB_LATENCY,1000280,59733,78108,84711
+LAB_LATENCY,1000281,59473,77878,84510
+LAB_LATENCY,1000282,59693,78048,84841
+LAB_LATENCY,1000283,59062,137722,145075
+LAB_LATENCY,1000284,65434,84711,92346
+LAB_LATENCY,1000285,61527,122002,130277
+LAB_LATENCY,1000286,79370,97946,107254
+LAB_LATENCY,1000287,61486,80112,87286
+LAB_LATENCY,1000288,60555,79050,86003
+LAB_LATENCY,1000289,60064,78449,85142
+LAB_LATENCY,1000290,90642,114939,121540
+LAB_LATENCY,1000291,84560,103506,110179
+LAB_LATENCY,1000292,127563,182176,190702
+LAB_LATENCY,1000293,110961,130608,140457
+LAB_LATENCY,1000294,65023,83518,91153
+LAB_LATENCY,1000295,61066,79721,86514
+LAB_LATENCY,1000296,74130,93026,99849
+LAB_LATENCY,1000297,62569,81164,88218
+LAB_LATENCY,1000298,60154,78278,85071
+LAB_LATENCY,1000299,98497,117864,125028
+LAB_LATENCY,1000300,62849,81084,88518
+LAB_LATENCY,1000301,145567,169552,177788
+LAB_LATENCY,1000302,78679,97695,106863
+LAB_LATENCY,1000303,62890,115049,123625
+LAB_LATENCY,1000304,79812,98918,107965
+LAB_LATENCY,1000305,62318,80863,88247
+LAB_LATENCY,1000306,60805,79200,86404
+LAB_LATENCY,1000307,60254,78599,85352
+LAB_LATENCY,1000308,60665,110890,117523
+LAB_LATENCY,1000309,82326,111692,120158
+LAB_LATENCY,1000310,147591,178209,188808
+LAB_LATENCY,1000311,90171,132321,143874
+LAB_LATENCY,1000312,85272,111091,120278
+LAB_LATENCY,1000313,67609,86224,94309
+LAB_LATENCY,1000314,61457,79962,87225
+LAB_LATENCY,1000315,60395,78639,85413
+LAB_LATENCY,1000316,60234,78429,85182
+LAB_LATENCY,1000317,95230,119507,126099
+LAB_LATENCY,1000318,182978,335387,343793
+LAB_LATENCY,1000319,108537,137802,147871
+LAB_LATENCY,1000320,113255,143452,152490
+LAB_LATENCY,1000321,105381,125288,132652
+LAB_LATENCY,1000322,63621,82256,89120
+LAB_LATENCY,1000323,112103,196904,207715
+LAB_LATENCY,1000324,197926,223846,235518
+LAB_LATENCY,1000325,76074,98286,107715
+LAB_LATENCY,1000326,90332,113195,121681
+LAB_LATENCY,1000327,68510,92736,101333
+LAB_LATENCY,1000328,68170,89190,97916
+LAB_LATENCY,1000329,65955,87156,95451
+LAB_LATENCY,1000330,99048,121520,130157
+LAB_LATENCY,1000331,68620,93518,102806
+LAB_LATENCY,1000332,75744,101233,111081
+LAB_LATENCY,1000333,74973,99900,109969
+LAB_LATENCY,1000334,71777,97405,107133
+LAB_LATENCY,1000335,82767,123254,134395
+LAB_LATENCY,1000336,87406,129767,141690
+LAB_LATENCY,1000337,141088,145066,156037
+LAB_LATENCY,1000338,71816,203867,215369
+LAB_LATENCY,1000339,108376,129867,139525
+LAB_LATENCY,1000340,67368,86344,93818
+LAB_LATENCY,1000341,61327,79752,86975
+LAB_LATENCY,1000342,60495,78689,85562
+LAB_LATENCY,1000343,59783,77657,84511
+LAB_LATENCY,1000344,59813,77697,84371
+LAB_LATENCY,1000345,59503,77758,84501
+LAB_LATENCY,1000346,59503,77688,84481
+LAB_LATENCY,1000347,59303,77247,84069
+LAB_LATENCY,1000348,59603,77627,84380
+LAB_LATENCY,1000349,59683,77918,84631
+LAB_LATENCY,1000350,60225,156217,163681
+LAB_LATENCY,1000351,79431,99398,107333
+LAB_LATENCY,1000352,62809,81164,88458
+LAB_LATENCY,1000353,60685,78970,85833
+LAB_LATENCY,1000354,95331,101663,109778
+LAB_LATENCY,1000355,73630,94610,103737
+LAB_LATENCY,1000356,62048,80323,87486
+LAB_LATENCY,1000357,60905,82206,90041
+LAB_LATENCY,1000358,127382,151819,162399
+LAB_LATENCY,1000359,79060,183038,193628
+LAB_LATENCY,1000360,91905,114017,123345
+LAB_LATENCY,1000361,64102,82547,89991
+LAB_LATENCY,1000362,60846,79080,85993
+LAB_LATENCY,1000363,59954,78259,85112
+LAB_LATENCY,1000364,60155,106533,114557
+LAB_LATENCY,1000365,80924,100150,109227
+LAB_LATENCY,1000366,211482,238152,247019
+LAB_LATENCY,1000367,135588,156367,165494
+LAB_LATENCY,1000368,67489,86865,94229
+LAB_LATENCY,1000369,61487,79802,86775
+LAB_LATENCY,1000370,161056,210916,221696
+LAB_LATENCY,1000371,95055,117743,130047
+LAB_LATENCY,1000372,66732,85983,93528
+LAB_LATENCY,1000373,61762,79981,86835
+LAB_LATENCY,1000374,76080,95041,101794
+LAB_LATENCY,1000375,61802,80262,86744
+LAB_LATENCY,1000376,59999,78299,84972
+LAB_LATENCY,1000377,59518,77557,84240
+LAB_LATENCY,1000378,75809,94589,101513
+LAB_LATENCY,1000379,61121,79511,86554
+LAB_LATENCY,1000380,59658,77918,84671
+LAB_LATENCY,1000381,59498,77858,84581
+LAB_LATENCY,1000382,111707,131510,138112
+LAB_LATENCY,1000383,62554,81144,87857
+LAB_LATENCY,1000384,59708,77747,84280
+LAB_LATENCY,1000385,59237,84480,91765
+LAB_LATENCY,1000386,100656,156788,167438
+LAB_LATENCY,1000387,80438,103346,113085
+LAB_LATENCY,1000388,63445,82336,89751
+LAB_LATENCY,1000389,60620,78850,85894
+LAB_LATENCY,1000390,106818,128304,134817
+LAB_LATENCY,1000391,74336,92886,99499
+LAB_LATENCY,1000392,61111,79280,85853
+LAB_LATENCY,1000393,60349,78579,85182
+LAB_LATENCY,1000394,60651,78990,85692
+LAB_LATENCY,1000395,60039,78369,84872
+LAB_LATENCY,1000396,114893,118926,126461
+LAB_LATENCY,1000397,91559,113746,123164
+LAB_LATENCY,1000398,63877,82577,90051
+LAB_LATENCY,1000399,61091,79461,86294
+LAB_LATENCY,1000400,60210,78439,85282
+LAB_LATENCY,1000401,60189,78268,84861
+LAB_LATENCY,1000402,149980,169843,176576
+LAB_LATENCY,1000403,62393,80994,87507
+LAB_LATENCY,1000404,60089,149644,157570
+LAB_LATENCY,1000405,116696,147129,156267
+LAB_LATENCY,1000406,95206,116271,125408
+LAB_LATENCY,1000407,102740,124777,132311
+LAB_LATENCY,1000408,118199,141018,147911
+LAB_LATENCY,1000409,104805,136530,145998
+LAB_LATENCY,1000410,87882,138724,148923
+LAB_LATENCY,1000411,109673,130007,138303
+LAB_LATENCY,1000412,63846,82527,89690
+LAB_LATENCY,1000413,60771,78890,85312
+LAB_LATENCY,1000414,60009,78028,84540
+LAB_LATENCY,1000415,59889,78069,84561
+LAB_LATENCY,1000416,59488,77537,83910
+LAB_LATENCY,1000417,59167,77447,83990
+LAB_LATENCY,1000418,59558,77527,84039
+LAB_LATENCY,1000419,58997,76927,83338
+LAB_LATENCY,1000420,59307,77457,83990
+LAB_LATENCY,1000421,242596,383077,392566
+LAB_LATENCY,1000422,91589,111081,120388
+LAB_LATENCY,1000423,63285,81715,89280
+LAB_LATENCY,1000424,60390,78619,85422
+LAB_LATENCY,1000425,60059,78268,84981
+LAB_LATENCY,1000426,60039,78078,84651
+LAB_LATENCY,1000427,59578,77738,84350
+LAB_LATENCY,1000428,155891,189791,197715
+LAB_LATENCY,1000429,89716,109007,118034
+LAB_LATENCY,1000430,166211,188509,197275
+LAB_LATENCY,1000431,64127,83008,91794
+LAB_LATENCY,1000432,73455,91895,99148
+LAB_LATENCY,1000433,62493,80803,87847
+LAB_LATENCY,1000434,60269,78278,85031
+LAB_LATENCY,1000435,59959,78109,84841
+LAB_LATENCY,1000436,222768,251618,260345
+LAB_LATENCY,1000437,83143,102134,111402
+LAB_LATENCY,1000438,62994,107604,116180
+LAB_LATENCY,1000439,78484,97746,106863
+LAB_LATENCY,1000440,61762,80303,87516
+LAB_LATENCY,1000441,60150,78650,85262
+LAB_LATENCY,1000442,59418,77517,84130
+LAB_LATENCY,1000443,59599,77738,84460
+LAB_LATENCY,1000444,59778,77857,84521
+LAB_LATENCY,1000445,131675,155475,163301
+LAB_LATENCY,1000446,77532,96463,105270
+LAB_LATENCY,1000447,61572,79932,87456
+LAB_LATENCY,1000448,60781,78890,85613
+LAB_LATENCY,1000449,59949,78159,84791
+LAB_LATENCY,1000450,59759,77928,84560
+LAB_LATENCY,1000451,59388,77768,84380
+LAB_LATENCY,1000452,59478,77597,84200
+LAB_LATENCY,1000453,60220,78359,84831
+LAB_LATENCY,1000454,59909,95722,102244
+LAB_LATENCY,1000455,171541,195481,202655
+LAB_LATENCY,1000456,70188,165033,173290
+LAB_LATENCY,1000457,65730,122523,132000
+LAB_LATENCY,1000458,87642,125258,135999
+LAB_LATENCY,1000459,97089,117242,127632
+LAB_LATENCY,1000460,65760,84381,92585
+LAB_LATENCY,1000461,60941,78860,85733
+LAB_LATENCY,1000462,59698,77747,84461
+LAB_LATENCY,1000463,59498,77457,83920
+LAB_LATENCY,1000464,59157,77327,83759
+LAB_LATENCY,1000465,59438,77487,84140
+LAB_LATENCY,1000466,59838,162749,171426
+LAB_LATENCY,1000467,265640,410375,422959
+LAB_LATENCY,1000468,109758,212934,224737
+LAB_LATENCY,1000469,105460,210670,222352
+LAB_LATENCY,1000470,107164,143743,153642
+LAB_LATENCY,1000471,71375,101012,110150
+LAB_LATENCY,1000472,85302,93468,104318
+LAB_LATENCY,1000473,68801,89070,98467
+LAB_LATENCY,1000474,62799,81244,88357
+LAB_LATENCY,1000475,60315,78509,85393
+LAB_LATENCY,1000476,59934,78419,85142
+LAB_LATENCY,1000477,60095,78279,84931
+LAB_LATENCY,1000478,59493,77767,84360
+LAB_LATENCY,1000479,59402,77807,84400
+LAB_LATENCY,1000480,130247,172908,181144
+LAB_LATENCY,1000481,164913,195882,206993
+LAB_LATENCY,1000482,87917,108075,119447
+LAB_LATENCY,1000483,63892,82587,90552
+LAB_LATENCY,1000484,60795,112153,120288
+LAB_LATENCY,1000485,83098,104028,113366
+LAB_LATENCY,1000486,81736,100782,108526
+LAB_LATENCY,1000487,84771,126551,133684
+LAB_LATENCY,1000488,64492,84771,92485
+LAB_LATENCY,1000489,66577,98267,106903
+LAB_LATENCY,1000490,90802,110370,118355
+LAB_LATENCY,1000491,63600,82095,89219
+LAB_LATENCY,1000492,60585,78830,85603
+LAB_LATENCY,1000493,59684,78219,84741
+LAB_LATENCY,1000494,59764,77788,84481
+LAB_LATENCY,1000495,59353,77818,84621
+LAB_LATENCY,1000496,59332,77597,84260
+LAB_LATENCY,1000497,59293,77277,83899
+LAB_LATENCY,1000498,151878,278098,290392
+LAB_LATENCY,1000499,124005,146248,158090
+LAB_LATENCY,1000500,66807,85533,93247
+LAB_LATENCY,1000501,62339,80974,87867
+LAB_LATENCY,1000502,60394,78920,85763
+LAB_LATENCY,1000503,60265,78469,85282
+LAB_LATENCY,1000504,59643,86885,95291
+LAB_LATENCY,1000505,86915,129396,140376
+LAB_LATENCY,1000506,100792,105130,117373
+LAB_LATENCY,1000507,87156,125929,136540
+LAB_LATENCY,1000508,70234,89851,98307
+LAB_LATENCY,1000509,146469,171236,179531
+LAB_LATENCY,1000510,98718,117794,125138
+LAB_LATENCY,1000511,62339,80734,87647
+LAB_LATENCY,1000512,60966,79140,85903
+LAB_LATENCY,1000513,228003,266586,274862
+LAB_LATENCY,1000514,200691,264262,276656
+LAB_LATENCY,1000515,89180,109759,119016
+LAB_LATENCY,1000516,84651,88097,95732
+LAB_LATENCY,1000517,79251,101914,111642
+LAB_LATENCY,1000518,63511,82146,89671
+LAB_LATENCY,1000519,60675,79250,86094
+LAB_LATENCY,1000520,75142,103546,110289
+LAB_LATENCY,1000521,62258,90752,99740
+LAB_LATENCY,1000522,85362,105079,114918
+LAB_LATENCY,1000523,63801,82516,89761
+LAB_LATENCY,1000524,60525,78590,85282
+LAB_LATENCY,1000525,60395,78679,85352
+LAB_LATENCY,1000526,60314,78509,85042
+LAB_LATENCY,1000527,60024,78169,84701
+LAB_LATENCY,1000528,102645,124045,130658
+LAB_LATENCY,1000529,74661,77948,85192
+LAB_LATENCY,1000530,81004,103938,113426
+LAB_LATENCY,1000531,64232,196934,207735
+LAB_LATENCY,1000532,137270,160394,172307
+LAB_LATENCY,1000533,69963,89259,97205
+LAB_LATENCY,1000534,62128,80713,87787
+LAB_LATENCY,1000535,60565,78850,85533
+LAB_LATENCY,1000536,60505,78900,85582
+LAB_LATENCY,1000537,60354,78569,85112
+LAB_LATENCY,1000538,59703,77778,84350
+LAB_LATENCY,1000539,60195,78299,85042
+LAB_LATENCY,1000540,74873,93378,100160
+LAB_LATENCY,1000541,83288,114538,123124
+LAB_LATENCY,1000542,77407,96202,105220
+LAB_LATENCY,1000543,61678,80123,87386
+LAB_LATENCY,1000544,60605,79010,85722
+LAB_LATENCY,1000545,59954,78429,85072
+LAB_LATENCY,1000546,59774,77888,84551
+LAB_LATENCY,1000547,59093,105310,111982
+LAB_LATENCY,1000548,84300,117954,125949
+LAB_LATENCY,1000549,80744,100461,109598
+LAB_LATENCY,1000550,158922,182842,192691
+LAB_LATENCY,1000551,88213,112224,122212
+LAB_LATENCY,1000552,76040,109208,118986
+LAB_LATENCY,1000553,85918,105771,115078
+LAB_LATENCY,1000554,63685,82326,90051
+LAB_LATENCY,1000555,60480,78579,85482
+LAB_LATENCY,1000556,59629,77979,84521
+LAB_LATENCY,1000557,59238,77407,84100
+LAB_LATENCY,1000558,77372,99640,106272
+LAB_LATENCY,1000559,105686,135007,143452
+LAB_LATENCY,1000560,87792,106993,116090
+LAB_LATENCY,1000561,62915,81395,88688
+LAB_LATENCY,1000562,98191,119557,126260
+LAB_LATENCY,1000563,74908,93187,100020
+LAB_LATENCY,1000564,61482,79872,86674
+LAB_LATENCY,1000565,90477,151979,159773
+LAB_LATENCY,1000566,94695,114548,123675
+LAB_LATENCY,1000567,76570,288227,297936
+LAB_LATENCY,1000568,116376,137712,146939
+LAB_LATENCY,1000569,64889,83389,90732
+LAB_LATENCY,1000570,61291,79641,86294
+LAB_LATENCY,1000571,61161,79411,85933
+LAB_LATENCY,1000572,59709,77968,84591
+LAB_LATENCY,1000573,59768,78238,84901
+LAB_LATENCY,1000574,93463,97165,104649
+LAB_LATENCY,1000575,77121,99699,109188
+LAB_LATENCY,1000576,62754,81475,88849
+LAB_LATENCY,1000577,60149,78639,85422
+LAB_LATENCY,1000578,59959,78148,84831
+LAB_LATENCY,1000579,59728,77857,84440
+LAB_LATENCY,1000580,59207,77397,84100
+LAB_LATENCY,1000581,59819,78159,84731
+LAB_LATENCY,1000582,59438,77557,84200
+LAB_LATENCY,1000583,59468,77448,84050
+LAB_LATENCY,1000584,89354,125208,133183
+LAB_LATENCY,1000585,153226,195011,205451
+LAB_LATENCY,1000586,106918,128374,138273
+LAB_LATENCY,1000587,73325,92356,100541
+LAB_LATENCY,1000588,62263,80713,87726
+LAB_LATENCY,1000589,61001,79220,86094
+LAB_LATENCY,1000590,59829,77848,84480
+LAB_LATENCY,1000591,59659,77678,84320
+LAB_LATENCY,1000592,64888,85813,92415
+LAB_LATENCY,1000593,61902,80272,86845
+LAB_LATENCY,1000594,90357,181144,188518
+LAB_LATENCY,1000595,90347,110891,118735
+LAB_LATENCY,1000596,68405,89210,97055
+LAB_LATENCY,1000597,81490,101884,111632
+LAB_LATENCY,1000598,66512,85222,93177
+LAB_LATENCY,1000599,60420,78709,85722
+LAB_LATENCY,1000600,60109,78309,85102
+LAB_LATENCY,1000601,108661,130187,136769
+LAB_LATENCY,1000602,128729,161988,172458
+LAB_LATENCY,1000603,140332,250025,263901
+LAB_LATENCY,1000604,107218,128754,140026
+LAB_LATENCY,1000605,64919,111262,119837
+LAB_LATENCY,1000606,79236,98077,107233
+LAB_LATENCY,1000607,61882,80383,87867
+LAB_LATENCY,1000608,60640,78639,85522
+LAB_LATENCY,1000609,59738,77827,84470
+LAB_LATENCY,1000610,185217,224506,232933
+LAB_LATENCY,1000611,127537,148161,157419
+LAB_LATENCY,1000612,64708,83088,90302
+LAB_LATENCY,1000613,60731,78970,85884
+LAB_LATENCY,1000614,60400,78650,85383
+LAB_LATENCY,1000615,59989,78229,85012
+LAB_LATENCY,1000616,59528,77708,84310
+LAB_LATENCY,1000617,59458,77417,83930
+LAB_LATENCY,1000618,59709,77798,84510
+LAB_LATENCY,1000619,196028,234195,274171
+LAB_LATENCY,1000620,93703,113656,123004
+LAB_LATENCY,1000621,63645,82236,89590
+LAB_LATENCY,1000622,152224,173039,180463
+LAB_LATENCY,1000623,64908,83529,90632
+LAB_LATENCY,1000624,60600,78710,85382
+LAB_LATENCY,1000625,59638,77718,84230
+LAB_LATENCY,1000626,59969,78128,84621
+LAB_LATENCY,1000627,59438,77738,84470
+LAB_LATENCY,1000628,64368,83319,146959
+LAB_LATENCY,1000629,61322,79892,87246
+LAB_LATENCY,1000630,60701,78950,85592
+LAB_LATENCY,1000631,59778,78308,84801
+LAB_LATENCY,1000632,293612,442520,452158
+LAB_LATENCY,1000633,145853,251217,262158
+LAB_LATENCY,1000634,126476,165575,176114
+LAB_LATENCY,1000635,95156,115920,125478
+LAB_LATENCY,1000636,66662,104168,112113
+LAB_LATENCY,1000637,66793,85863,93488
+LAB_LATENCY,1000638,61202,79581,86634
+LAB_LATENCY,1000639,60601,79010,86003
+LAB_LATENCY,1000640,233118,335276,343583
+LAB_LATENCY,1000641,99555,120348,129576
+LAB_LATENCY,1000642,65149,83659,91053
+LAB_LATENCY,1000643,61483,79982,86915
+LAB_LATENCY,1000644,210911,312183,320629
+LAB_LATENCY,1000645,98658,119277,128293
+LAB_LATENCY,1000646,65064,84040,91464
+LAB_LATENCY,1000647,61427,79921,86714
+LAB_LATENCY,1000648,60535,78689,85452
+LAB_LATENCY,1000649,74813,93347,100271
+LAB_LATENCY,1000650,61778,80072,87316
+LAB_LATENCY,1000651,60005,78329,85232
+LAB_LATENCY,1000652,97185,121271,130829
+LAB_LATENCY,1000653,91905,111321,119246
+LAB_LATENCY,1000654,62710,116962,125508
+LAB_LATENCY,1000655,115551,138985,148522
+LAB_LATENCY,1000656,91114,106352,113716
+LAB_LATENCY,1000657,63952,84381,92185
+LAB_LATENCY,1000658,107445,129176,136169
+LAB_LATENCY,1000659,66087,84611,91373
+LAB_LATENCY,1000660,82457,86875,95421
+LAB_LATENCY,1000661,96644,120309,131851
+LAB_LATENCY,1000662,65004,83599,91293
+LAB_LATENCY,1000663,61678,80042,87025
+LAB_LATENCY,1000664,59994,78569,85292
+LAB_LATENCY,1000665,59614,78139,84831
+LAB_LATENCY,1000666,59664,78189,84791
+LAB_LATENCY,1000667,59875,78229,84741
+LAB_LATENCY,1000668,101914,157159,165435
+LAB_LATENCY,1000669,154003,191654,202926
+LAB_LATENCY,1000670,114688,149113,160695
+LAB_LATENCY,1000671,85172,131630,142931
+LAB_LATENCY,1000672,89581,109378,118375
+LAB_LATENCY,1000673,96274,99619,107615
+LAB_LATENCY,1000674,77888,100130,109598
+LAB_LATENCY,1000675,62910,114698,121972
+LAB_LATENCY,1000676,97486,191995,203136
+LAB_LATENCY,1000677,101503,121581,131179
+LAB_LATENCY,1000678,64482,83659,90943
+LAB_LATENCY,1000679,103787,127903,134986
+LAB_LATENCY,1000680,73469,92335,99148
+LAB_LATENCY,1000681,61998,80583,87526
+LAB_LATENCY,1000682,60224,78429,85102
+LAB_LATENCY,1000683,59714,79982,86604
+LAB_LATENCY,1000684,145907,308791,318420
+LAB_LATENCY,1000685,134190,251152,262934
+LAB_LATENCY,1000686,108156,301298,312700
+LAB_LATENCY,1000687,128298,349884,361486
+LAB_LATENCY,1000688,135853,278238,289960
+LAB_LATENCY,1000689,126997,154243,166196
+LAB_LATENCY,1000690,84175,105240,119417
+LAB_LATENCY,1000691,78074,97555,107554
+LAB_LATENCY,1000692,63726,195802,205160
+LAB_LATENCY,1000693,123731,128224,139775
+LAB_LATENCY,1000694,98483,223836,239145
+LAB_LATENCY,1000695,293313,414774,891203
+LAB_LATENCY,1000696,212924,247751,258941
+LAB_LATENCY,1000697,191584,226821,238403
+LAB_LATENCY,1000698,257058,396854,410180
+LAB_LATENCY,1000699,260745,387606,401502
+LAB_LATENCY,1000700,383448,527712,565293
+LAB_LATENCY,1000701,124196,169352,181254
+LAB_LATENCY,1000702,103216,152379,161657
+LAB_LATENCY,1000703,111703,132482,142010
+LAB_LATENCY,1000704,67960,89770,97635
+LAB_LATENCY,1000705,119067,150346,158902
+LAB_LATENCY,1000706,204980,255986,267408
+LAB_LATENCY,1000707,91224,114518,123315
+LAB_LATENCY,1000708,135047,178539,187236
+LAB_LATENCY,1000709,113206,147320,158080
+LAB_LATENCY,1000710,130819,193307,205189
+LAB_LATENCY,1000711,246329,283449,295321
+LAB_LATENCY,1000712,106403,133424,146638
+LAB_LATENCY,1000713,94169,119156,129937
+LAB_LATENCY,1000714,92006,118465,129777
+LAB_LATENCY,1000715,90933,116451,127201
+LAB_LATENCY,1000716,90422,115830,126551
+LAB_LATENCY,1000717,90262,115189,126330
+LAB_LATENCY,1000718,90522,116751,127863
+LAB_LATENCY,1000719,90092,115780,126460
+LAB_LATENCY,1000720,89781,115119,125909
+LAB_LATENCY,1000721,90833,116572,127462
+LAB_LATENCY,1000722,89390,115940,127211
+LAB_LATENCY,1000723,141319,176004,186715
+LAB_LATENCY,1000724,267188,316041,330838
+LAB_LATENCY,1000725,133004,166627,178168
+LAB_LATENCY,1000726,188288,225167,237381
+LAB_LATENCY,1000727,137963,173590,186435
+LAB_LATENCY,1000728,409097,599294,615655
+LAB_LATENCY,1000729,177026,313766,329356
+LAB_LATENCY,1000730,292080,419612,433067
+LAB_LATENCY,1000731,131069,267037,279570
+LAB_LATENCY,1000732,153311,180172,191804
+LAB_LATENCY,1000733,110321,158542,168150
+LAB_LATENCY,1000734,104900,133854,143302
+LAB_LATENCY,1000735,131080,163911,176615
+LAB_LATENCY,1000736,132582,172137,184891
+LAB_LATENCY,1000737,86275,105831,115289
+LAB_LATENCY,1000738,63942,82757,90212
+LAB_LATENCY,1000739,60826,89951,98618
+LAB_LATENCY,1000740,104720,283519,294079
+LAB_LATENCY,1000741,131721,163651,174862
+LAB_LATENCY,1000742,109048,114007,163340
+LAB_LATENCY,1000743,88639,117182,128804
+LAB_LATENCY,1000744,135669,164273,173440
+LAB_LATENCY,1000745,119648,157088,169813
+LAB_LATENCY,1000746,110220,151357,162930
+LAB_LATENCY,1000747,177218,246088,258351
+LAB_LATENCY,1000748,138002,168429,177807
+LAB_LATENCY,1000749,167489,202826,211823
+LAB_LATENCY,1000750,153201,177066,187296
+LAB_LATENCY,1000751,101634,105069,113486
+LAB_LATENCY,1000752,237913,262880,275674
+LAB_LATENCY,1000753,73890,93067,102364
+LAB_LATENCY,1000754,62719,81474,88819
+LAB_LATENCY,1000755,61817,80162,87015
+LAB_LATENCY,1000756,60285,78640,85342
+LAB_LATENCY,1000757,77828,96353,103346
+LAB_LATENCY,1000758,61857,80553,87476
+LAB_LATENCY,1000759,60805,79240,85953
+LAB_LATENCY,1000760,59813,87706,95822
+LAB_LATENCY,1000761,126500,130237,139836
+LAB_LATENCY,1000762,127793,152199,162027
+LAB_LATENCY,1000763,103446,135637,144875
+LAB_LATENCY,1000764,113175,146979,158340
+LAB_LATENCY,1000765,110861,170705,181775
+LAB_LATENCY,1000766,133223,160745,168901
+LAB_LATENCY,1000767,88188,111252,120900
+LAB_LATENCY,1000768,64693,83609,91194
+LAB_LATENCY,1000769,61526,79831,86784
+LAB_LATENCY,1000770,60485,78649,85322
+LAB_LATENCY,1000771,59573,77978,84771
+LAB_LATENCY,1000772,60175,78339,85121
+LAB_LATENCY,1000773,102304,127121,135558
+LAB_LATENCY,1000774,127643,152951,164272
+LAB_LATENCY,1000775,110179,131289,141258
+LAB_LATENCY,1000776,108436,130168,138082
+LAB_LATENCY,1000777,66777,175353,184380
+LAB_LATENCY,1000778,96103,118726,128194
+LAB_LATENCY,1000779,92736,97385,106683
+LAB_LATENCY,1000780,131309,159503,170393
+LAB_LATENCY,1000781,107314,129325,137211
+LAB_LATENCY,1000782,122242,152890,163340
+LAB_LATENCY,1000783,82778,117564,130337
+LAB_LATENCY,1000784,119337,124807,136470
+LAB_LATENCY,1000785,67498,87927,96363
+LAB_LATENCY,1000786,62037,80533,87567
+LAB_LATENCY,1000787,61157,87797,95802
+LAB_LATENCY,1000788,123034,146669,157208
+LAB_LATENCY,1000789,78289,97876,107444
+LAB_LATENCY,1000790,65133,126700,135517
+LAB_LATENCY,1000791,140307,166366,175834
+LAB_LATENCY,1000792,72528,91243,99089
+LAB_LATENCY,1000793,61998,80243,87176
+LAB_LATENCY,1000794,60475,78529,85352
+LAB_LATENCY,1000795,60295,78339,85111
+LAB_LATENCY,1000796,197445,225789,235758
+LAB_LATENCY,1000797,163190,238413,248562
+LAB_LATENCY,1000798,81264,101433,109929
+LAB_LATENCY,1000799,64152,91454,99930
+LAB_LATENCY,1000800,80352,113034,123154
+LAB_LATENCY,1000801,79972,117443,128364
+LAB_LATENCY,1000802,142751,182246,193998
+LAB_LATENCY,1000803,94560,123094,134756
+LAB_LATENCY,1000804,145636,184099,195141
+LAB_LATENCY,1000805,107153,136339,148582
+LAB_LATENCY,1000806,286183,381374,394320
+LAB_LATENCY,1000807,137772,164934,176315
+LAB_LATENCY,1000808,81495,106041,116131
+LAB_LATENCY,1000809,73429,96433,106182
+LAB_LATENCY,1000810,97696,128915,139385
+LAB_LATENCY,1000811,97646,122473,133293
+LAB_LATENCY,1000812,102786,139495,149975
+LAB_LATENCY,1000813,269633,299494,313230
+LAB_LATENCY,1000814,78714,98727,108606
+LAB_LATENCY,1000815,65059,83729,91123
+LAB_LATENCY,1000816,87361,110109,117233
+LAB_LATENCY,1000817,119502,139916,146859
+LAB_LATENCY,1000818,63335,82006,88639
+LAB_LATENCY,1000819,60741,79120,85903
+LAB_LATENCY,1000820,60200,78319,85192
+LAB_LATENCY,1000821,59848,78078,84701
+LAB_LATENCY,1000822,219667,247766,257143
+LAB_LATENCY,1000823,98101,118625,128123
+LAB_LATENCY,1000824,86930,108526,116061
+LAB_LATENCY,1000825,100936,104739,112824
+LAB_LATENCY,1000826,80608,103577,113024
+LAB_LATENCY,1000827,63775,82477,89981
+LAB_LATENCY,1000828,61060,79471,86504
+LAB_LATENCY,1000829,60098,78299,84962
+LAB_LATENCY,1000830,60179,85072,93608
+LAB_LATENCY,1000831,102118,123264,132652
+LAB_LATENCY,1000832,65028,83770,91324
+LAB_LATENCY,1000833,60298,78639,85322
+LAB_LATENCY,1000834,124672,154935,162448
+LAB_LATENCY,1000835,72552,280788,291589
+LAB_LATENCY,1000836,134641,158722,168310
+LAB_LATENCY,1000837,67884,87005,94700
+LAB_LATENCY,1000838,78865,106653,114919
+LAB_LATENCY,1000839,100395,121981,131640
+LAB_LATENCY,1000840,100015,135508,144695
+LAB_LATENCY,1000841,158907,181956,191534
+LAB_LATENCY,1000842,70750,89630,97826
+LAB_LATENCY,1000843,61893,80212,87166
+LAB_LATENCY,1000844,60560,78920,85974
+LAB_LATENCY,1000845,59979,78209,85181
+LAB_LATENCY,1000846,66822,73169,81746
+LAB_LATENCY,1000847,84536,105400,115319
+LAB_LATENCY,1000848,64538,83218,90933
+LAB_LATENCY,1000849,110024,130468,137591
+LAB_LATENCY,1000850,97400,119838,127903
+LAB_LATENCY,1000851,100265,123975,133043
+LAB_LATENCY,1000852,149069,199278,209427
+LAB_LATENCY,1000853,187542,234566,282176
+LAB_LATENCY,1000854,133910,304568,317113
+LAB_LATENCY,1000855,162184,198608,210810
+LAB_LATENCY,1000856,137927,161817,173009
+LAB_LATENCY,1000857,98473,122653,130758
+LAB_LATENCY,1000858,101969,123304,133564
+LAB_LATENCY,1000859,69809,88809,96574
+LAB_LATENCY,1000860,103692,126420,133484
+LAB_LATENCY,1000861,128811,163922,172006
+LAB_LATENCY,1000862,100767,512109,525403
+LAB_LATENCY,1000863,163149,330097,344004
+LAB_LATENCY,1000864,186525,292145,303707
+LAB_LATENCY,1000865,128995,247350,258030
+LAB_LATENCY,1000866,114127,135768,145286
+LAB_LATENCY,1000867,67389,86234,93768
+LAB_LATENCY,1000868,61466,79992,86946
+LAB_LATENCY,1000869,61397,79631,86375
+LAB_LATENCY,1000870,237906,353656,363084
+LAB_LATENCY,1000871,109428,213161,224592
+LAB_LATENCY,1000872,105114,204639,216171
+LAB_LATENCY,1000873,107389,225509,235808
+LAB_LATENCY,1000874,99293,172979,184009
+LAB_LATENCY,1000875,94534,124105,136770
+LAB_LATENCY,1000876,88052,95161,106793
+LAB_LATENCY,1000877,124170,159233,170504
+LAB_LATENCY,1000878,128438,163691,176004
+LAB_LATENCY,1000879,96468,132392,145216
+LAB_LATENCY,1000880,95196,123154,134656
+LAB_LATENCY,1000881,160014,190633,202324
+LAB_LATENCY,1000882,205340,235397,249845
+LAB_LATENCY,1000883,201202,231630,245616
+LAB_LATENCY,1000884,97635,123665,136640
+LAB_LATENCY,1000885,91364,117003,127983
+LAB_LATENCY,1000886,119077,133424,144995
+LAB_LATENCY,1000887,107103,133744,146799
+LAB_LATENCY,1000888,94299,120068,130958
+LAB_LATENCY,1000889,91985,117463,128404
+LAB_LATENCY,1000890,90602,116852,128184
+LAB_LATENCY,1000891,136800,170804,182536
+LAB_LATENCY,1000892,127191,153692,166306
+LAB_LATENCY,1000893,93427,119156,130207
+LAB_LATENCY,1000894,90943,116912,127783
+LAB_LATENCY,1000895,141649,171355,183799
+LAB_LATENCY,1000896,99649,125268,137962
+LAB_LATENCY,1000897,90332,115991,126921
+LAB_LATENCY,1000898,90031,116301,127542
+LAB_LATENCY,1000899,92486,118385,198748
+LAB_LATENCY,1000900,91774,117263,128133
+LAB_LATENCY,1000901,89840,115699,126460
+LAB_LATENCY,1000902,90762,116792,127472
+LAB_LATENCY,1000903,89169,115319,126700
+LAB_LATENCY,1000904,90232,115179,125629
+LAB_LATENCY,1000905,139655,172658,184771
+LAB_LATENCY,1000906,102835,128684,141720
+LAB_LATENCY,1000907,91334,116872,127763
+LAB_LATENCY,1000908,90122,115840,126290
+LAB_LATENCY,1000909,225438,254764,267568
+LAB_LATENCY,1000910,93538,119537,132171
+LAB_LATENCY,1000911,90833,116010,126811
+LAB_LATENCY,1000912,89780,116060,127111
+LAB_LATENCY,1000913,89760,114928,125779
+LAB_LATENCY,1000914,89530,115770,126611
+LAB_LATENCY,1000915,89880,114717,125509
+LAB_LATENCY,1000916,89961,115189,126120
+LAB_LATENCY,1000917,90432,116120,127112
+LAB_LATENCY,1000918,89530,115058,125969
+LAB_LATENCY,1000919,158491,191133,203427
+LAB_LATENCY,1000920,103967,130217,142641
+LAB_LATENCY,1000921,92486,118425,129536
+LAB_LATENCY,1000922,90963,117083,128414
+LAB_LATENCY,1000923,142090,172197,184400
+LAB_LATENCY,1000924,128104,302715,318935
+LAB_LATENCY,1000925,227312,285262,297295
+LAB_LATENCY,1000926,239139,306342,320979
+LAB_LATENCY,1000927,255686,299088,313085
+LAB_LATENCY,1000928,205285,238303,250806
+LAB_LATENCY,1000929,109803,140297,152520
+LAB_LATENCY,1000930,88563,125188,136490
+LAB_LATENCY,1000931,244418,345286,356537
+LAB_LATENCY,1000932,98110,118425,127853
+LAB_LATENCY,1000933,65209,84040,91443
+LAB_LATENCY,1000934,61572,79992,87056
+LAB_LATENCY,1000935,60810,79170,85994
+LAB_LATENCY,1000936,152294,187987,195993
+LAB_LATENCY,1000937,100846,132942,142571
+LAB_LATENCY,1000938,87321,113857,124096
+LAB_LATENCY,1000939,86849,107344,117162
+LAB_LATENCY,1000940,91658,111191,119187
+LAB_LATENCY,1000941,246503,276401,287822
+LAB_LATENCY,1000942,97675,124236,137922
+LAB_LATENCY,1000943,420829,557985,570198
+LAB_LATENCY,1000944,124531,219067,231831
+LAB_LATENCY,1000945,327332,483379,496493
+LAB_LATENCY,1000946,285462,422923,437601
+LAB_LATENCY,1000947,235498,387587,400451
+LAB_LATENCY,1000948,299108,407394,420499
+LAB_LATENCY,1000949,225809,283960,295331
+LAB_LATENCY,1000950,385553,430353,443758
+LAB_LATENCY,1000951,210675,236810,249744
+LAB_LATENCY,1000952,224121,253963,264122
+LAB_LATENCY,1000953,175939,208186,219577
+LAB_LATENCY,1000954,158366,183559,195501
+LAB_LATENCY,1000955,108181,132031,140186
+LAB_LATENCY,1000956,215500,439024,448682
+LAB_LATENCY,1000957,124427,238849,250592
+LAB_LATENCY,1000958,125694,243873,254603
+LAB_LATENCY,1000959,100486,147901,158020
+LAB_LATENCY,1000960,72954,92295,100360
+LAB_LATENCY,1000961,63636,82507,89851
+LAB_LATENCY,1000962,171756,301226,310624
+LAB_LATENCY,1000963,132257,281264,291864
+LAB_LATENCY,1000964,128439,227798,239280
+LAB_LATENCY,1000965,111502,218219,229871
+LAB_LATENCY,1000966,105416,128124,138924
+LAB_LATENCY,1000967,220329,325614,338799
+LAB_LATENCY,1000968,129680,157308,169182
+LAB_LATENCY,1000969,169462,292005,304589
+LAB_LATENCY,1000970,154534,198207,212193
+LAB_LATENCY,1000971,252900,318795,332252
+LAB_LATENCY,1000972,119697,144765,154093
+LAB_LATENCY,1000973,120469,154304,162879
+LAB_LATENCY,1000974,107925,194740,203357
+LAB_LATENCY,1000975,147641,172999,180743
+LAB_LATENCY,1000976,139716,167689,175544
+LAB_LATENCY,1000977,151738,213506,222673
+LAB_LATENCY,1000978,106191,131740,170214
+LAB_LATENCY,1000979,77036,96473,105009
+LAB_LATENCY,1000980,70133,90993,97906
+LAB_LATENCY,1000981,62900,81686,88348
+LAB_LATENCY,1000982,60715,79221,85843
+LAB_LATENCY,1000983,59984,78228,84751
+LAB_LATENCY,1000984,158766,194099,306482
+LAB_LATENCY,1000985,123860,147560,160294
+LAB_LATENCY,1000986,71782,90773,99799
+LAB_LATENCY,1000987,61892,80342,87416
+LAB_LATENCY,1000988,60620,78660,85673
+LAB_LATENCY,1000989,60380,78459,85041
+LAB_LATENCY,1000990,60269,78509,85272
+LAB_LATENCY,1000991,82422,101533,108636
+LAB_LATENCY,1000992,62684,81084,88418
+LAB_LATENCY,1000993,60921,79150,85913
+LAB_LATENCY,1000994,60230,78429,85071
+LAB_LATENCY,1000995,59378,77537,84100
+LAB_LATENCY,1000996,101308,130298,138423
+LAB_LATENCY,1000997,68305,86936,95892
+LAB_LATENCY,1000998,61202,79471,86504
+LAB_LATENCY,1000999,106748,126861,133584
+LAB_PASS latency count=1000
+LAB_DONE 0
+[    7.715574] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.726216] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.745427] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.755511] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.774879] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.785262] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.808976] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.820564] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.845416] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.856876] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.880939] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.892105] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.918977] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.932642] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.957345] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    7.968966] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    7.994534] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.043528] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.067704] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.115351] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.140834] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.183284] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.203222] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.251240] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.275090] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.323136] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.342631] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.383374] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.407278] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.455203] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.480087] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.523376] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+[    8.543396] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.587277] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+[    8.701515] virtio_lab virtio2: request timed out; queue reclaimed; rebind required
+LAB_PASS timeout elapsed_ns=110313090 reclaim_before_free=reset_and_del_vqs
+LAB_DONE 0
+[    8.722682] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+[    8.767403] virtio_lab virtio2: ready: private ID 63, packed=0 queue=64
+LAB_DONE 0
+LAB_PASS smoke packed=0 callbacks=7
+LAB_DONE 0
+LAB_HOLD_OPEN
+LAB_DONE 0
+rmmod: can't unload module 'virtio_lab': Resource temporarily unavailable
+LAB_PASS unload_busy_open_fd
+LAB_DONE 0
+[    8.910838] virtio_lab virtio2: removed: queue stopped; open-file references retained safely
+LAB_HOLD_OPEN
+LAB_PASS removed_open_fd errno=ENODEV
+LAB_DONE 0
+[    9.028018] pci 0000:01:00.0: [1af4:107f] type 00 class 0x00ff00
+[    9.033709] pci 0000:01:00.0: reg 0x20: [mem 0x00000000-0x00003fff 64bit pref]
+[    9.038382] pci 0000:01:00.0: enabling Extended Tags
+[    9.049970] pci 0000:01:00.0: BAR 4: assigned [mem 0xfe800000-0xfe803fff 64bit pref]
+[   10.010408] virtio-pci 0000:01:00.0: enabling device (0000 -> 0002)
+FAIL: one lab misc device (errno=0 Success)
+LAB_DONE 1

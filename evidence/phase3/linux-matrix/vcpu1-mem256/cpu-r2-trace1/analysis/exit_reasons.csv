@@ -1,0 +1,6 @@
+tid,isa,reason,count
+1645,unspecified,cpuid,41
+1645,unspecified,interrupt,1505
+1645,unspecified,io,261
+1645,unspecified,msr,859
+1645,unspecified,vintr,107

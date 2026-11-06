@@ -1,0 +1,2 @@
+{"state":"ready","pid":1042,"tids":[1043,1044,1045,1046]}
+{"state":"finished","mode":"cpu","vcpus":4,"pause_us":1000,"workers":[{"tid":1043,"io_exits":1578,"mmio_exits":0,"elapsed_ns":2001216814,"error":0},{"tid":1044,"io_exits":1572,"mmio_exits":0,"elapsed_ns":2000200254,"error":0},{"tid":1045,"io_exits":1578,"mmio_exits":0,"elapsed_ns":2000913556,"error":0},{"tid":1046,"io_exits":1578,"mmio_exits":0,"elapsed_ns":2000207394,"error":0}]}

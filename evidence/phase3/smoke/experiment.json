@@ -1,0 +1,20 @@
+{
+  "seconds": 2,
+  "repeats": 1,
+  "configurations": [
+    [
+      "smoke",
+      2,
+      256,
+      "virtio",
+      "virtio",
+      [
+        "disk",
+        "net"
+      ]
+    ]
+  ],
+  "source_kind": "real Linux Guest, WSL2 nested KVM",
+  "order": "alternate trace-off/on and trace-on/off by repeat",
+  "window": "host CLOCK_MONOTONIC command-send to complete-reply; includes serial overhead"
+}

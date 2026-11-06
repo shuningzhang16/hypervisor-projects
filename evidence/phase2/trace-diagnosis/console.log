@@ -1,0 +1,150 @@
+Name:	cat
+Umask:	0022
+State:	R (running)
+Tgid:	577
+Ngid:	0
+Pid:	577
+PPid:	505
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	577
+NSpid:	577
+NSpgid:	505
+NSsid:	505
+Kthread:	0
+VmPeak:	    5912 kB
+VmSize:	    5912 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    2032 kB
+VmRSS:	    2032 kB
+RssAnon:	      96 kB
+RssFile:	    1936 kB
+RssShmem:	       0 kB
+VmData:	     360 kB
+VmStk:	     132 kB
+VmExe:	      16 kB
+VmLib:	    1796 kB
+VmPTE:	      60 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffffff
+Threads:	1
+SigQ:	0/39737
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000000000
+SigCgt:	0000000000000000
+CapInh:	0000000000000000
+CapPrm:	000001ffffffffff
+CapEff:	000001ffffffffff
+CapBnd:	000001ffffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Seccomp_filters:	0
+Speculation_Store_Bypass:	thread vulnerable
+SpeculationIndirectBranch:	conditional enabled
+Cpus_allowed:	ffff
+Cpus_allowed_list:	0-15
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	0
+nonvoluntary_ctxt_switches:	0
+pid:[4026532228]
+1
+nop
+[local] global counter uptime perf mono mono_raw boot tai x86-tsc
+CPU0 data recorded at offset=0x806000
+    0 bytes in size
+CPU1 data recorded at offset=0x806000
+    0 bytes in size
+CPU2 data recorded at offset=0x806000
+    0 bytes in size
+CPU3 data recorded at offset=0x806000
+    0 bytes in size
+CPU4 data recorded at offset=0x806000
+    0 bytes in size
+CPU5 data recorded at offset=0x806000
+    0 bytes in size
+CPU6 data recorded at offset=0x806000
+    0 bytes in size
+CPU7 data recorded at offset=0x806000
+    0 bytes in size
+CPU8 data recorded at offset=0x806000
+    0 bytes in size
+CPU9 data recorded at offset=0x806000
+    0 bytes in size
+CPU10 data recorded at offset=0x806000
+    0 bytes in size
+CPU11 data recorded at offset=0x806000
+    0 bytes in size
+CPU12 data recorded at offset=0x806000
+    0 bytes in size
+CPU13 data recorded at offset=0x806000
+    0 bytes in size
+CPU14 data recorded at offset=0x806000
+    0 bytes in size
+CPU15 data recorded at offset=0x806000
+    0 bytes in size
+CPU0 data recorded at offset=0x807000
+    0 bytes in size
+CPU1 data recorded at offset=0x807000
+    0 bytes in size
+CPU2 data recorded at offset=0x807000
+    0 bytes in size
+CPU3 data recorded at offset=0x807000
+    0 bytes in size
+CPU4 data recorded at offset=0x807000
+    0 bytes in size
+CPU5 data recorded at offset=0x807000
+    4096 bytes in size
+CPU6 data recorded at offset=0x808000
+    0 bytes in size
+CPU7 data recorded at offset=0x808000
+    0 bytes in size
+CPU8 data recorded at offset=0x808000
+    0 bytes in size
+CPU9 data recorded at offset=0x808000
+    0 bytes in size
+CPU10 data recorded at offset=0x808000
+    0 bytes in size
+CPU11 data recorded at offset=0x808000
+    0 bytes in size
+CPU12 data recorded at offset=0x808000
+    0 bytes in size
+CPU13 data recorded at offset=0x808000
+    0 bytes in size
+CPU14 data recorded at offset=0x808000
+    0 bytes in size
+CPU15 data recorded at offset=0x808000
+    0 bytes in size
+
+Buffer: lab-diag-505
+
+CPU 15 is empty
+cpus=16
+CPU 0 is empty
+CPU 1 is empty
+CPU 2 is empty
+CPU 3 is empty
+CPU 4 is empty
+CPU 6 is empty
+CPU 7 is empty
+CPU 8 is empty
+CPU 9 is empty
+CPU 10 is empty
+CPU 11 is empty
+CPU 12 is empty
+CPU 13 is empty
+CPU 14 is empty
+CPU 15 is empty
+lab-diag-505:            sleep-1769  [005]    66.528869705: sched_switch:         prev_comm=sleep prev_pid=1769 prev_prio=120 prev_state=S ==> next_comm=swapper/5 next_pid=0 next_prio=120
+lab-diag-505:           <idle>-0     [005]    66.628954541: sched_switch:         prev_comm=swapper/5 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sleep next_pid=1769 next_prio=120
+lab-diag-505:            sleep-1769  [005]    66.629291161: sched_switch:         prev_comm=sleep prev_pid=1769 prev_prio=120 prev_state=Z ==> next_comm=swapper/5 next_pid=0 next_prio=120

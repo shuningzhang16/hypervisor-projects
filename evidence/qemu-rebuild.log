@@ -1,0 +1,6 @@
+[1/8] Generating qemu-version.h with a custom command (wrapped by meson to capture output)
+[2/6] Compiling C object libqemu-x86_64-softmmu.a.p/hw_virtio_lab-protocol.c.o
+[3/6] Compiling C object libqemu-x86_64-softmmu.a.p/hw_virtio_virtio-lab.c.o
+[4/6] Compiling C object libqemu-x86_64-softmmu.a.p/hw_virtio_virtio-lab-pci.c.o
+[5/6] Compiling C object libqemu-x86_64-softmmu.a.p/hw_virtio_virtio.c.o
+[6/6] Linking target qemu-system-x86_64

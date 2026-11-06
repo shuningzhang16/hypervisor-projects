@@ -1,0 +1,71 @@
+{
+  "seconds": 3,
+  "repeats": 3,
+  "configurations": [
+    [
+      "vcpu2-mem256",
+      2,
+      256,
+      "virtio",
+      "virtio",
+      [
+        "cpu",
+        "disk",
+        "net"
+      ]
+    ],
+    [
+      "vcpu1-mem256",
+      1,
+      256,
+      "virtio",
+      "virtio",
+      [
+        "cpu"
+      ]
+    ],
+    [
+      "vcpu4-mem256",
+      4,
+      256,
+      "virtio",
+      "virtio",
+      [
+        "cpu"
+      ]
+    ],
+    [
+      "vcpu2-mem512",
+      2,
+      512,
+      "virtio",
+      "virtio",
+      [
+        "cpu"
+      ]
+    ],
+    [
+      "ahci",
+      2,
+      256,
+      "ahci",
+      "virtio",
+      [
+        "disk"
+      ]
+    ],
+    [
+      "e1000",
+      2,
+      256,
+      "virtio",
+      "e1000",
+      [
+        "net"
+      ]
+    ]
+  ],
+  "source_kind": "real Linux Guest, WSL2 nested KVM",
+  "order": "alternate trace-off/on and trace-on/off by repeat",
+  "window": "host CLOCK_MONOTONIC command-send to complete-reply; includes serial overhead"
+}

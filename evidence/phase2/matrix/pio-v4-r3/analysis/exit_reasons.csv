@@ -1,0 +1,10 @@
+tid,isa,reason,count
+2143,unspecified,interrupt,6
+2143,unspecified,io,1670
+2143,unspecified,npf,1
+2144,unspecified,interrupt,7
+2144,unspecified,io,1665
+2145,unspecified,interrupt,7
+2145,unspecified,io,1667
+2146,unspecified,interrupt,6
+2146,unspecified,io,1671

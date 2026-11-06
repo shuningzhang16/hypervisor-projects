@@ -1,0 +1,34 @@
+{
+  "source": "kvm_exit_analyzer/tests/fixtures/synthetic_trace.txt",
+  "vcpu_tids": [
+    101
+  ],
+  "vcpu_ids_by_tid": {
+    "101": [
+      "0"
+    ]
+  },
+  "first_timestamp_ns": 100000000000,
+  "last_timestamp_ns": 101000000000,
+  "observed_span_seconds": 1.0,
+  "event_counts": {
+    "kvm_entry": 3,
+    "kvm_exit": 3,
+    "kvm_mmio": 1,
+    "kvm_pio": 1,
+    "sched_switch": 3,
+    "sched_wakeup": 1
+  },
+  "warnings": {
+    "trailing_exit_without_entry": 1
+  },
+  "timing_degraded": false,
+  "notes": [
+    "Synthetic input remains synthetic; this analyzer cannot establish provenance.",
+    "Entry/exit intervals are wall time, not pure guest CPU time or pure exit handling cost.",
+    "Scheduler latencies require a synchronized cross-CPU trace clock and both scheduler events.",
+    "Rates use first/last relevant events, not requested recording duration.",
+    "One-second bins are sparse; missing rows mean zero; first/last bins may be partial.",
+    "Loss reported only on stderr/collection.log must also be reviewed by the operator."
+  ]
+}

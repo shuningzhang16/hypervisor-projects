@@ -1,0 +1,3 @@
+Guest kernel: 5.15.0-194-generic
+Ubuntu package version: 5.15.0-194.204
+Linux WIN-OHFCGC0I6IA 6.6.114.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux

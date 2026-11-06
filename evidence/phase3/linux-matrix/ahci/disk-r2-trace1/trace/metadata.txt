@@ -1,0 +1,4 @@
+requested_seconds=6
+trace_clock=mono
+process_pid=1727
+started_utc=2026-11-05T14:48:53Z

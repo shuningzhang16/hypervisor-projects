@@ -1,0 +1,16 @@
+tid,isa,reason,count
+2105,unspecified,hlt,641
+2105,unspecified,interrupt,96
+2105,unspecified,io,179
+2105,unspecified,msr,2011
+2105,unspecified,npf,673
+2105,unspecified,pause,1
+2105,unspecified,vintr,62
+2106,unspecified,cpuid,41
+2106,unspecified,hlt,1361
+2106,unspecified,interrupt,216
+2106,unspecified,io,93
+2106,unspecified,msr,3436
+2106,unspecified,npf,6793
+2106,unspecified,pause,3
+2106,unspecified,vintr,86

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/mnt/e/桌面/Hypervisor-Projects-work/kvm_exit_analyzer/tests/collector_integration.py", line 28, in <module>
+    assert 'sched_switch:' in text and 'sched_wakeup:' in text, 'no scheduler events recorded'
+AssertionError: no scheduler events recorded

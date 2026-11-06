@@ -1,0 +1,5 @@
+tid,metric,count,mean_ns,min_ns,max_ns
+101,entry_to_exit_wall,3,332833333.3333333,1000000,996500000
+101,exit_to_entry_wall,2,600000.0,200000,1000000
+101,preempt_to_run,1,500000.0,500000,500000
+101,wakeup_to_run,1,200000.0,200000,200000

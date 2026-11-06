@@ -1,0 +1,10 @@
+{
+  "mode": "cpu",
+  "units": 4128000000,
+  "unit": "iterations",
+  "elapsed_ns": 3002254735,
+  "rate": 1374966604.891,
+  "traced": true,
+  "host_start_ns": 235254518761,
+  "host_end_ns": 238244653021
+}

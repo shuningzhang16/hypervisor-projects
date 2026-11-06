@@ -1,0 +1,2 @@
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 128 reset cycles

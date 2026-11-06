@@ -1,0 +1,35 @@
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-headers-5.15.0-194 all 5.15.0-194.204 [12.4 MB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-headers-5.15.0-194-generic amd64 5.15.0-194.204 [2,866 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-image-5.15.0-194-generic amd64 5.15.0-194.204 [11.6 MB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-modules-5.15.0-194-generic amd64 5.15.0-194.204 [22.7 MB]
+Fetched 49.6 MB in 24s (2,104 kB/s)
+Package: linux-headers-5.15.0-194
+Version: 5.15.0-194.204
+Package: linux-headers-5.15.0-194-generic
+Version: 5.15.0-194.204
+Package: linux-image-5.15.0-194-generic
+Version: 5.15.0-194.204
+Package: linux-modules-5.15.0-194-generic
+Version: 5.15.0-194.204
+/var/tmp/hypervisor-driver-kernel/root/boot:
+total 17876
+-rw-r--r-- 1 dministrator dministrator   262133 Sep  2 17:39 config-5.15.0-194-generic
+-rw------- 1 dministrator dministrator  6304777 Sep  2 17:39 System.map-5.15.0-194-generic
+-rw------- 1 dministrator dministrator 11733000 Sep  2 17:41 vmlinuz-5.15.0-194-generic
+
+/var/tmp/hypervisor-driver-kernel/root/usr/src:
+total 8
+drwxr-xr-x 25 dministrator dministrator 4096 Sep  2 17:39 linux-headers-5.15.0-194
+drwxr-xr-x  7 dministrator dministrator 4096 Nov  5 23:52 linux-headers-5.15.0-194-generic
+# SPDX-License-Identifier: GPL-2.0
+VERSION = 5
+PATCHLEVEL = 15
+SUBLEVEL = 209
+EXTRAVERSION =
+NAME = Trick or Treat
+
+# *DOCUMENTATION*
+# To see a list of typical targets execute "make help"
+# More info can be located in ./README
+# Comments in this file are targeted only to the developer, do not
+# expect to learn how to build the kernel reading this file.

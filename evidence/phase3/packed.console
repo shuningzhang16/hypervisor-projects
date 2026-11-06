@@ -1,0 +1,1 @@
+{"requests": 4096, "wrap_transitions": 1081, "reset_cycles": 32, "wall_seconds": 13.506862519999999, "result": "PASS", "checks": ["packed features", "SG across wrap", "content/used ID/length", "notification suppression", "unsupported opcode", "reset", "fatal chain recovery"], "scope": "TCG qtest transport functionality; not KVM performance"}

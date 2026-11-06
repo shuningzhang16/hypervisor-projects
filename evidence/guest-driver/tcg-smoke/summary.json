@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "accelerator": "tcg",
+  "packed": false,
+  "guest_kernel": "5.15.0-194-generic",
+  "smoke_only": true,
+  "rebind_cycles": 0,
+  "reload_cycles": 0,
+  "latency_samples": 0,
+  "kernel_error_markers": [],
+  "checks": [
+    "LAB_PASS smoke packed=0 callbacks=7"
+  ],
+  "module_scope": "custom driver loaded only inside this disposable Guest; no host module loaded"
+}

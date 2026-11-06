@@ -1,0 +1,15 @@
+tid,isa,reason,count
+1034,unspecified,hlt,223
+1034,unspecified,hypercall,1
+1034,unspecified,interrupt,26
+1034,unspecified,io,180
+1034,unspecified,msr,65
+1034,unspecified,vintr,14
+1035,unspecified,cpuid,41
+1035,unspecified,hlt,1416
+1035,unspecified,interrupt,821
+1035,unspecified,io,18
+1035,unspecified,msr,635
+1035,unspecified,npf,186
+1035,unspecified,pause,4
+1035,unspecified,vintr,107

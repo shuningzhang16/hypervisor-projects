@@ -1,0 +1,3 @@
+    PID     TID PSR COMMAND
+   1801    1801   2 kvm_microbench
+   1801    1802   4 lab-vcpu-0

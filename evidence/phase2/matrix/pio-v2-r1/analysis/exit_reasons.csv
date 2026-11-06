@@ -1,0 +1,6 @@
+tid,isa,reason,count
+1781,unspecified,interrupt,7
+1781,unspecified,io,1703
+1782,unspecified,interrupt,7
+1782,unspecified,io,1715
+1782,unspecified,npf,1

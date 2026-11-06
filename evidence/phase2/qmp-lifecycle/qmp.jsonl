@@ -1,0 +1,11 @@
+{"QMP": {"version": {"qemu": {"micro": 0, "minor": 2, "major": 9}, "package": ""}, "capabilities": ["oob"]}}
+{"execute": "qmp_capabilities"}
+{"return": {}}
+{"execute": "system_reset"}
+{"timestamp": {"seconds": 1793886958, "microseconds": 571272}, "event": "RESET", "data": {"guest": false, "reason": "host-qmp-system-reset"}}
+{"return": {}}
+{"execute": "migrate", "arguments": {"uri": "unix:/tmp/lab-lifecycle-2xp9wzc0/unused-migration-target"}}
+{"error": {"class": "GenericError", "desc": "State blocked by non-migratable device '0000:00:04.0/virtio-lab'"}}
+{"execute": "quit"}
+{"timestamp": {"seconds": 1793886958, "microseconds": 804054}, "event": "SHUTDOWN", "data": {"guest": false, "reason": "host-qmp-quit"}}
+{"return": {}}

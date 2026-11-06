@@ -1,0 +1,18 @@
+{
+  "mode": "disk",
+  "units": 11796480,
+  "unit": "verified_write_bytes",
+  "elapsed_ns": 2001000039,
+  "rate": 5895292.239,
+  "traced": true,
+  "host_start_ns": 20706738515,
+  "host_end_ns": 22720550726,
+  "kvm_exits": 7945,
+  "timing_degraded": false,
+  "configuration": "smoke",
+  "vcpus": 2,
+  "memory_mib": 256,
+  "disk": "virtio",
+  "nic": "virtio",
+  "repeat": 1
+}

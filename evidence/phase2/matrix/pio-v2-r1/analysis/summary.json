@@ -1,0 +1,37 @@
+{
+  "source": "/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/matrix/pio-v2-r1/capture/trace.txt",
+  "vcpu_tids": [
+    1781,
+    1782
+  ],
+  "vcpu_ids_by_tid": {
+    "1781": [
+      "0"
+    ],
+    "1782": [
+      "1"
+    ]
+  },
+  "first_timestamp_ns": 224423962832,
+  "last_timestamp_ns": 226425198015,
+  "observed_span_seconds": 2.001235183,
+  "event_counts": {
+    "kvm_entry": 3433,
+    "kvm_exit": 3433,
+    "kvm_pio": 3418,
+    "sched_switch": 6840,
+    "sched_wakeup": 3420
+  },
+  "warnings": {
+    "trailing_exit_without_entry": 2
+  },
+  "timing_degraded": false,
+  "notes": [
+    "Synthetic input remains synthetic; this analyzer cannot establish provenance.",
+    "Entry/exit intervals are wall time, not pure guest CPU time or pure exit handling cost.",
+    "Scheduler latencies require a synchronized cross-CPU trace clock and both scheduler events.",
+    "Rates use first/last relevant events, not requested recording duration.",
+    "One-second bins are sparse; missing rows mean zero; first/last bins may be partial.",
+    "Loss reported only on stderr/collection.log must also be reviewed by the operator."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "source": "/mnt/e/桌面/Hypervisor-Projects-work/evidence/phase2/matrix/mmio-v1-r2/capture/trace.txt",
+  "source_kind": "unspecified",
+  "vcpu_tids": [
+    2268
+  ],
+  "diagnostic_files": [],
+  "vcpu_ids_by_tid": {
+    "2268": [
+      "0"
+    ]
+  },
+  "first_timestamp_ns": 345378219539,
+  "last_timestamp_ns": 347379493841,
+  "observed_span_seconds": 2.001274302,
+  "event_counts": {
+    "kvm_entry": 1678,
+    "kvm_exit": 1678,
+    "kvm_mmio": 2503,
+    "sched_switch": 3340,
+    "sched_wakeup": 1670
+  },
+  "warnings": {
+    "trailing_exit_without_entry": 1
+  },
+  "timing_degraded": false,
+  "notes": [
+    "Synthetic input remains synthetic; this analyzer cannot establish provenance.",
+    "Entry/exit intervals are wall time, not pure guest CPU time or pure exit handling cost.",
+    "Scheduler latencies require a synchronized cross-CPU trace clock and both scheduler events.",
+    "Rates use first/last relevant events, not requested recording duration.",
+    "One-second bins are sparse; missing rows mean zero; first/last bins may be partial.",
+    "Loss reported only on stderr/collection.log must also be reviewed by the operator."
+  ]
+}

@@ -1,0 +1,5 @@
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 0 batched requests; 0 reset cycles
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 0 batched requests; 0 reset cycles
+PASS: QMP machine reset, queue recovery, migration refusal, clean exit

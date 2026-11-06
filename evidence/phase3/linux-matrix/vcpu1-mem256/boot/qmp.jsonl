@@ -1,0 +1,8 @@
+{"QMP": {"version": {"qemu": {"micro": 0, "minor": 2, "major": 9}, "package": ""}, "capabilities": ["oob"]}}
+{"execute": "qmp_capabilities"}
+{"return": {}}
+{"execute": "query-cpus-fast"}
+{"return": [{"thread-id": 1277, "props": {"core-id": 0, "thread-id": 0, "socket-id": 0}, "qom-path": "/machine/unattached/device[0]", "cpu-index": 0, "target": "x86_64"}]}
+{"execute": "cont"}
+{"timestamp": {"seconds": 1793889949, "microseconds": 473374}, "event": "RESUME"}
+{"return": {}}

@@ -1,0 +1,6 @@
+kvm:kvm_entry
+kvm:kvm_exit
+kvm:kvm_mmio
+kvm:kvm_pio
+sched:sched_switch
+sched:sched_wakeup

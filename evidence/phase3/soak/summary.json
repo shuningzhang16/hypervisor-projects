@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "rounds": 16,
+  "requests": 1049088,
+  "resets": 512,
+  "index_wraps": 16,
+  "elapsed_seconds": 611.8589440349999,
+  "rss_first_kib": 34004,
+  "rss_last_kib": 34004,
+  "rss_max_kib": 34004,
+  "scope": "single QEMU process, TCG qtest, trace disabled; bounded software stress, not production endurance"
+}

@@ -1,0 +1,8 @@
+trace_second,event,count
+100,kvm_entry,3
+100,kvm_exit,2
+100,kvm_mmio,1
+100,kvm_pio,1
+100,sched_switch,3
+100,sched_wakeup,1
+101,kvm_exit,1

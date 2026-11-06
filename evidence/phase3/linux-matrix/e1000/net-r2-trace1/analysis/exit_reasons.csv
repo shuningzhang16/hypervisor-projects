@@ -1,0 +1,15 @@
+tid,isa,reason,count
+2259,unspecified,cpuid,41
+2259,unspecified,hlt,253
+2259,unspecified,interrupt,14
+2259,unspecified,io,1
+2259,unspecified,msr,616
+2259,unspecified,npf,235
+2259,unspecified,pause,1
+2259,unspecified,vintr,24
+2260,unspecified,hlt,135
+2260,unspecified,interrupt,70
+2260,unspecified,io,211
+2260,unspecified,msr,1400
+2260,unspecified,npf,3450
+2260,unspecified,vintr,78

@@ -1,0 +1,14 @@
+{
+  "before": {
+    "tracing_on": "1\n",
+    "current_tracer": "nop\n",
+    "trace_clock": "[local] global counter uptime perf mono mono_raw boot tai x86-tsc\n",
+    "set_event": ""
+  },
+  "after": {
+    "tracing_on": "1\n",
+    "current_tracer": "nop\n",
+    "trace_clock": "[local] global counter uptime perf mono mono_raw boot tai x86-tsc\n",
+    "set_event": ""
+  }
+}

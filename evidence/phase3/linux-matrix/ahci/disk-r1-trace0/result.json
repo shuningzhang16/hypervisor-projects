@@ -1,0 +1,16 @@
+{
+  "mode": "disk",
+  "units": 10551296,
+  "unit": "verified_write_bytes",
+  "elapsed_ns": 3004887882,
+  "rate": 3511377.6,
+  "traced": false,
+  "host_start_ns": 337215644933,
+  "host_end_ns": 340233076103,
+  "configuration": "ahci",
+  "vcpus": 2,
+  "memory_mib": 256,
+  "disk": "ahci",
+  "nic": "virtio",
+  "repeat": 1
+}

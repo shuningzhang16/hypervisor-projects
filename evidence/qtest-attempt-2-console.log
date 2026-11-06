@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/mnt/e/桌面/Hypervisor-Projects/qemu_virtio_lab/tests/qtest_smoke.py", line 187, in <module>
+    main()
+  File "/mnt/e/桌面/Hypervisor-Projects/qemu_virtio_lab/tests/qtest_smoke.py", line 175, in main
+    exercise(QTest(sock))
+  File "/mnt/e/桌面/Hypervisor-Projects/qemu_virtio_lab/tests/qtest_smoke.py", line 67, in exercise
+    assert q.pci_get(0) == 0x107F1AF4, 'private modern PCI ID not found at slot 4'
+  File "/mnt/e/桌面/Hypervisor-Projects/qemu_virtio_lab/tests/qtest_smoke.py", line 56, in pci_get
+    self.command(f'outl 0xcf8 {0x80002000 | (offset & ~3):#x}')
+  File "/mnt/e/桌面/Hypervisor-Projects/qemu_virtio_lab/tests/qtest_smoke.py", line 36, in command
+    line = self.stream.readline().decode().strip()
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: timed out

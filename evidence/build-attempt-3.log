@@ -1,0 +1,8 @@
+Collecting tomli>=1.2
+  Using cached tomli-2.5.0-py3-none-any.whl (14 kB)
+Collecting meson==1.5.0
+  Downloading meson-1.5.0-py3-none-any.whl (959 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 959.8/959.8 KB 282.0 kB/s eta 0:00:00
+Installing collected packages: tomli, meson
+Successfully installed meson-1.5.0 tomli-2.5.0
+exit_code=0

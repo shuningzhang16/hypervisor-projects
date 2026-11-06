@@ -1,0 +1,3 @@
+tid,isa,reason,count
+2324,unspecified,interrupt,4
+2324,unspecified,npf,1715

@@ -1,0 +1,13 @@
+tid,isa,reason,count
+1950,unspecified,cpuid,41
+1950,unspecified,hlt,3
+1950,unspecified,interrupt,1502
+1950,unspecified,io,272
+1950,unspecified,msr,764
+1950,unspecified,vintr,12
+1951,unspecified,hlt,2
+1951,unspecified,interrupt,1509
+1951,unspecified,io,2
+1951,unspecified,msr,767
+1951,unspecified,pause,7
+1951,unspecified,vintr,1

@@ -1,0 +1,33 @@
+{
+  "accelerator": "kvm",
+  "packed": 1,
+  "unit": "ns",
+  "metrics": {
+    "submit_to_callback_ns": {
+      "count": 1000,
+      "min": 72047,
+      "max": 987566,
+      "p50": 78679,
+      "p95": 283829,
+      "p99": 484640
+    },
+    "submit_to_wait_return_ns": {
+      "count": 1000,
+      "min": 97144,
+      "max": 1292035,
+      "p50": 107454,
+      "p95": 401653,
+      "p99": 627196
+    },
+    "ioctl_roundtrip_ns": {
+      "count": 1000,
+      "min": 102725,
+      "max": 2203927,
+      "p50": 116291,
+      "p95": 545917,
+      "p99": 814036
+    }
+  },
+  "scope": "Guest CLOCK_MONOTONIC, 32-byte echo, QEMU backend trace logging enabled; nested KVM if selected",
+  "serial_output": "emitted after measuring all samples"
+}

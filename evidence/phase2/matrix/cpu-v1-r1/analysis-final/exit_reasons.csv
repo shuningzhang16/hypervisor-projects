@@ -1,0 +1,4 @@
+tid,isa,reason,count
+904,unspecified,interrupt,32
+904,unspecified,io,1590
+904,unspecified,npf,1

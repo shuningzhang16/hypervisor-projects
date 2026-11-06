@@ -1,0 +1,28 @@
+name: Software tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - run: bash run_offline_tests.sh
+  qemu:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential python3-venv ninja-build pkg-config libglib2.0-dev libpixman-1-dev
+      - run: bash scripts/build_qemu.sh "$RUNNER_TEMP/qemu-lab"
+      - run: |
+          python3 qemu_virtio_lab/tests/qtest_smoke.py "$RUNNER_TEMP/qemu-lab/qemu-9.2.0/build/qemu-system-x86_64" --out runs/qtest --requests 4096 --resets 32
+          python3 qemu_virtio_lab/tests/qmp_lifecycle.py "$RUNNER_TEMP/qemu-lab/qemu-9.2.0/build/qemu-system-x86_64" --out runs/lifecycle
+          python3 qemu_virtio_lab/tests/qtest_packed.py "$RUNNER_TEMP/qemu-lab/qemu-9.2.0/build/qemu-system-x86_64" --out runs/packed

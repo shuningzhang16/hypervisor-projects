@@ -1,0 +1,10 @@
+make: Entering directory '/var/tmp/hypervisor-driver-kernel/root/usr/src/linux-headers-5.15.0-194-generic'
+  CC [M]  /var/tmp/hypervisor-driver-build-ready/module/virtio_lab.o
+  MODPOST /var/tmp/hypervisor-driver-build-ready/module/Module.symvers
+  CC [M]  /var/tmp/hypervisor-driver-build-ready/module/virtio_lab.mod.o
+  LD [M]  /var/tmp/hypervisor-driver-build-ready/module/virtio_lab.ko
+  BTF [M] /var/tmp/hypervisor-driver-build-ready/module/virtio_lab.ko
+Skipping BTF generation for /var/tmp/hypervisor-driver-build-ready/module/virtio_lab.ko due to unavailability of vmlinux
+make: Leaving directory '/var/tmp/hypervisor-driver-kernel/root/usr/src/linux-headers-5.15.0-194-generic'
+7395 blocks
+Built Guest driver and initramfs in /var/tmp/hypervisor-driver-build-ready

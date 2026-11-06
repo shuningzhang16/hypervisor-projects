@@ -1,0 +1,61 @@
+Linux WIN-OHFCGC0I6IA 6.6.114.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Python 3.10.12
+gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+test_backward_clock_clears_pairs (test_analyzer.AnalyzerTests) ... ok
+test_empty_trace_rejected (test_analyzer.AnalyzerTests) ... ok
+test_external_loss_marks_timing_degraded (test_analyzer.AnalyzerTests) ... ok
+test_fixture_intervals_and_scheduler (test_analyzer.AnalyzerTests) ... ok
+test_loss_breaks_pairs (test_analyzer.AnalyzerTests) ... ok
+test_malformed_event_marks_degraded (test_analyzer.AnalyzerTests) ... ok
+test_no_pair_between_tids (test_analyzer.AnalyzerTests) ... ok
+test_real_instance_prefix (test_analyzer.AnalyzerTests) ... ok
+test_single_timestamp_has_no_infinite_rate (test_analyzer.AnalyzerTests) ... ok
+test_sleep_is_not_runqueue_delay (test_analyzer.AnalyzerTests) ... ok
+test_timestamp_precision_namespace_and_spaces (test_analyzer.AnalyzerTests) ... ok
+test_wakeup_target_not_emitter_and_first_wake (test_analyzer.AnalyzerTests) ... ok
+test_exact_quantiles (test_reports.ReportTests) ... ok
+test_marker_pid_namespace_mapping (test_reports.ReportTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.088s
+
+OK
+{
+  "source": "kvm_exit_analyzer/tests/fixtures/synthetic_trace.txt",
+  "source_kind": "synthetic",
+  "vcpu_tids": [
+    101
+  ],
+  "diagnostic_files": [],
+  "vcpu_ids_by_tid": {
+    "101": [
+      "0"
+    ]
+  },
+  "first_timestamp_ns": 100000000000,
+  "last_timestamp_ns": 101000000000,
+  "observed_span_seconds": 1.0,
+  "event_counts": {
+    "kvm_entry": 3,
+    "kvm_exit": 3,
+    "kvm_mmio": 1,
+    "kvm_pio": 1,
+    "sched_switch": 3,
+    "sched_wakeup": 1
+  },
+  "warnings": {
+    "trailing_exit_without_entry": 1
+  },
+  "timing_degraded": false,
+  "notes": [
+    "Synthetic input remains synthetic; this analyzer cannot establish provenance.",
+    "Entry/exit intervals are wall time, not pure guest CPU time or pure exit handling cost.",
+    "Scheduler latencies require a synchronized cross-CPU trace clock and both scheduler events.",
+    "Rates use first/last relevant events, not requested recording duration.",
+    "One-second bins are sparse; missing rows mean zero; first/last bins may be partial.",
+    "Loss reported only on stderr/collection.log must also be reviewed by the operator."
+  ]
+}
+PASS: 10000 varied-length payload round trips with untouched-tail checks
+PASS: echo, empty/max payload, short buffers, unsupported opcode, flags, length/overflow
+PASS: offline tests only; no real VM/KVM benchmark performed.

@@ -1,0 +1,43 @@
+{
+  "source": "/var/tmp/hypervisor-phase3-evidence/linux-matrix/vcpu2-mem256/net-r2-trace1/workload-trace.txt",
+  "source_kind": "real-kvm",
+  "vcpu_tids": [
+    1034,
+    1035
+  ],
+  "diagnostic_files": [
+    "/var/tmp/hypervisor-phase3-evidence/linux-matrix/vcpu2-mem256/net-r2-trace1/trace/collection.log",
+    "/var/tmp/hypervisor-phase3-evidence/linux-matrix/vcpu2-mem256/net-r2-trace1/trace/report.stderr"
+  ],
+  "vcpu_ids_by_tid": {
+    "1034": [
+      "0"
+    ],
+    "1035": [
+      "1"
+    ]
+  },
+  "first_timestamp_ns": 142858940952,
+  "last_timestamp_ns": 145841551707,
+  "observed_span_seconds": 2.982610755,
+  "event_counts": {
+    "kvm_entry": 4026,
+    "kvm_exit": 4024,
+    "kvm_mmio": 189,
+    "kvm_pio": 198,
+    "sched_switch": 1304,
+    "sched_wakeup": 655
+  },
+  "warnings": {
+    "trailing_entry_without_exit": 2
+  },
+  "timing_degraded": false,
+  "notes": [
+    "Synthetic input remains synthetic; this analyzer cannot establish provenance.",
+    "Entry/exit intervals are wall time, not pure guest CPU time or pure exit handling cost.",
+    "Scheduler latencies require a synchronized cross-CPU trace clock and both scheduler events.",
+    "Rates use first/last relevant events, not requested recording duration.",
+    "One-second bins are sparse; missing rows mean zero; first/last bins may be partial.",
+    "Loss reported only on stderr/collection.log must also be reviewed by the operator."
+  ]
+}

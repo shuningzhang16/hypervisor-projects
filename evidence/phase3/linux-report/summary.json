@@ -1,0 +1,16 @@
+{
+  "completed_runs": 48,
+  "expected_runs": 48,
+  "paired_runs": 24,
+  "traced_runs": 24,
+  "event_counts": {
+    "kvm_entry": 181603,
+    "kvm_exit": 181585,
+    "kvm_mmio": 57608,
+    "kvm_pio": 6286,
+    "sched_switch": 36387,
+    "sched_wakeup": 18159
+  },
+  "degraded_runs": [],
+  "source": "real Linux Guest on WSL2 nested KVM"
+}

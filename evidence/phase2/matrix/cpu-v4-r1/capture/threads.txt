@@ -1,0 +1,6 @@
+    PID     TID PSR COMMAND
+    910     910   2 kvm_microbench
+    910     914   8 lab-vcpu-0
+    910     915  14 lab-vcpu-1
+    910     916   3 lab-vcpu-2
+    910     917  13 lab-vcpu-3

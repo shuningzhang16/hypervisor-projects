@@ -1,0 +1,10 @@
+tid,isa,reason,count
+2079,unspecified,interrupt,4
+2079,unspecified,io,1677
+2080,unspecified,interrupt,2
+2080,unspecified,io,1668
+2081,unspecified,interrupt,4
+2081,unspecified,io,1661
+2082,unspecified,interrupt,3
+2082,unspecified,io,1681
+2082,unspecified,npf,1

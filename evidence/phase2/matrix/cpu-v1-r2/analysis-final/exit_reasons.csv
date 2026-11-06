@@ -1,0 +1,4 @@
+tid,isa,reason,count
+971,unspecified,interrupt,38
+971,unspecified,io,1584
+971,unspecified,npf,1

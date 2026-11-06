@@ -1,0 +1,45 @@
+{
+  "state": "passed",
+  "provenance": "real-kvm-microbench",
+  "mode": "mmio",
+  "vcpus": 4,
+  "repeat": 2,
+  "tracing": false,
+  "requested_seconds": 2,
+  "workload": {
+    "state": "finished",
+    "mode": "mmio",
+    "vcpus": 4,
+    "pause_us": 1000,
+    "workers": [
+      {
+        "tid": 2279,
+        "io_exits": 0,
+        "mmio_exits": 1660,
+        "elapsed_ns": 2000553037,
+        "error": 0
+      },
+      {
+        "tid": 2280,
+        "io_exits": 0,
+        "mmio_exits": 1660,
+        "elapsed_ns": 2000894215,
+        "error": 0
+      },
+      {
+        "tid": 2282,
+        "io_exits": 0,
+        "mmio_exits": 1680,
+        "elapsed_ns": 2000695911,
+        "error": 0
+      },
+      {
+        "tid": 2283,
+        "io_exits": 0,
+        "mmio_exits": 1668,
+        "elapsed_ns": 2000613227,
+        "error": 0
+      }
+    ]
+  }
+}

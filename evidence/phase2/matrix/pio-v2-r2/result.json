@@ -1,0 +1,31 @@
+{
+  "state": "passed",
+  "provenance": "real-kvm-microbench",
+  "mode": "pio",
+  "vcpus": 2,
+  "repeat": 2,
+  "tracing": true,
+  "requested_seconds": 2,
+  "workload": {
+    "state": "finished",
+    "mode": "pio",
+    "vcpus": 2,
+    "pause_us": 1000,
+    "workers": [
+      {
+        "tid": 1454,
+        "io_exits": 1648,
+        "mmio_exits": 0,
+        "elapsed_ns": 2000791174,
+        "error": 0
+      },
+      {
+        "tid": 1455,
+        "io_exits": 1646,
+        "mmio_exits": 0,
+        "elapsed_ns": 2000273958,
+        "error": 0
+      }
+    ]
+  }
+}

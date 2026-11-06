@@ -1,0 +1,1 @@
+Desktop delivery complete. 60 source/document files matched. Four passing Guest runs and first failed run preserved. Host kernel/module settings unchanged. Robocopy exit 3.

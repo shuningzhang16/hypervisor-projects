@@ -1,0 +1,1 @@
+2026-11-05: An initial DEVELOPMENT_PLAN.md text patch did not match a complete table row. apply_patch rejected it without changing the file. The patch was corrected against the existing full lines; no experiment was rerun and no security or validation behavior was changed.

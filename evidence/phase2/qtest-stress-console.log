@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/mnt/e/桌面/Hypervisor-Projects-work/qemu_virtio_lab/tests/qtest_smoke.py", line 270, in <module>
+    main()
+  File "/mnt/e/桌面/Hypervisor-Projects-work/qemu_virtio_lab/tests/qtest_smoke.py", line 255, in main
+    result = exercise(QTest(sock), requests=args.requests, resets=args.resets)
+  File "/mnt/e/桌面/Hypervisor-Projects-work/qemu_virtio_lab/tests/qtest_smoke.py", line 171, in exercise
+    assert q.get(common + 20, 1) & 64, f'{fault}: NEEDS_RESET not set'
+AssertionError: unmapped: NEEDS_RESET not set

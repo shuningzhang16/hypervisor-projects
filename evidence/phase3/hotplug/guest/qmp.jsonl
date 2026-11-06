@@ -1,0 +1,331 @@
+{"QMP": {"version": {"qemu": {"micro": 0, "minor": 2, "major": 9}, "package": ""}, "capabilities": ["oob"]}}
+{"execute": "qmp_capabilities"}
+{"return": {}}
+{"execute": "query-cpus-fast"}
+{"return": [{"thread-id": 591, "props": {"core-id": 0, "thread-id": 0, "socket-id": 0}, "qom-path": "/machine/unattached/device[0]", "cpu-index": 0, "target": "x86_64"}]}
+{"execute": "cont"}
+{"timestamp": {"seconds": 1793890376, "microseconds": 425343}, "event": "RESUME"}
+{"return": {}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab0", "bus": "labport"}}
+{"timestamp": {"seconds": 1793890380, "microseconds": 484608}, "event": "NIC_RX_FILTER_CHANGED", "data": {"path": "/machine/peripheral-anon/device[1]/virtio-backend"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab0"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890380, "microseconds": 600473}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab0/virtio-backend"}}
+{"timestamp": {"seconds": 1793890380, "microseconds": 651465}, "event": "DEVICE_DELETED", "data": {"device": "lab0", "path": "/machine/peripheral/lab0"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab1", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab1"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890380, "microseconds": 787253}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab1/virtio-backend"}}
+{"timestamp": {"seconds": 1793890380, "microseconds": 838355}, "event": "DEVICE_DELETED", "data": {"device": "lab1", "path": "/machine/peripheral/lab1"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab2", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab2"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890381, "microseconds": 39185}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab2/virtio-backend"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890381, "microseconds": 90276}, "event": "DEVICE_DELETED", "data": {"device": "lab2", "path": "/machine/peripheral/lab2"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab3", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab3"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890381, "microseconds": 296985}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab3/virtio-backend"}}
+{"timestamp": {"seconds": 1793890381, "microseconds": 347833}, "event": "DEVICE_DELETED", "data": {"device": "lab3", "path": "/machine/peripheral/lab3"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab4", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab4"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890381, "microseconds": 493422}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab4/virtio-backend"}}
+{"timestamp": {"seconds": 1793890381, "microseconds": 544294}, "event": "DEVICE_DELETED", "data": {"device": "lab4", "path": "/machine/peripheral/lab4"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab5", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab5"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890381, "microseconds": 689763}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab5/virtio-backend"}}
+{"timestamp": {"seconds": 1793890381, "microseconds": 740726}, "event": "DEVICE_DELETED", "data": {"device": "lab5", "path": "/machine/peripheral/lab5"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab6", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab6"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890381, "microseconds": 885067}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab6/virtio-backend"}}
+{"timestamp": {"seconds": 1793890381, "microseconds": 936083}, "event": "DEVICE_DELETED", "data": {"device": "lab6", "path": "/machine/peripheral/lab6"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab7", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab7"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890382, "microseconds": 208075}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab7/virtio-backend"}}
+{"timestamp": {"seconds": 1793890382, "microseconds": 258998}, "event": "DEVICE_DELETED", "data": {"device": "lab7", "path": "/machine/peripheral/lab7"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab8", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab8"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890382, "microseconds": 402719}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab8/virtio-backend"}}
+{"timestamp": {"seconds": 1793890382, "microseconds": 453608}, "event": "DEVICE_DELETED", "data": {"device": "lab8", "path": "/machine/peripheral/lab8"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab9", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab9"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890382, "microseconds": 597378}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab9/virtio-backend"}}
+{"timestamp": {"seconds": 1793890382, "microseconds": 648283}, "event": "DEVICE_DELETED", "data": {"device": "lab9", "path": "/machine/peripheral/lab9"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab10", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab10"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890382, "microseconds": 795990}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab10/virtio-backend"}}
+{"timestamp": {"seconds": 1793890382, "microseconds": 846886}, "event": "DEVICE_DELETED", "data": {"device": "lab10", "path": "/machine/peripheral/lab10"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab11", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab11"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890382, "microseconds": 991247}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab11/virtio-backend"}}
+{"timestamp": {"seconds": 1793890383, "microseconds": 42202}, "event": "DEVICE_DELETED", "data": {"device": "lab11", "path": "/machine/peripheral/lab11"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab12", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab12"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890383, "microseconds": 200538}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab12/virtio-backend"}}
+{"timestamp": {"seconds": 1793890383, "microseconds": 251541}, "event": "DEVICE_DELETED", "data": {"device": "lab12", "path": "/machine/peripheral/lab12"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab13", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab13"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890383, "microseconds": 406923}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab13/virtio-backend"}}
+{"timestamp": {"seconds": 1793890383, "microseconds": 457909}, "event": "DEVICE_DELETED", "data": {"device": "lab13", "path": "/machine/peripheral/lab13"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab14", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab14"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890383, "microseconds": 627595}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab14/virtio-backend"}}
+{"timestamp": {"seconds": 1793890383, "microseconds": 678588}, "event": "DEVICE_DELETED", "data": {"device": "lab14", "path": "/machine/peripheral/lab14"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab15", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab15"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890383, "microseconds": 824183}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab15/virtio-backend"}}
+{"timestamp": {"seconds": 1793890383, "microseconds": 875077}, "event": "DEVICE_DELETED", "data": {"device": "lab15", "path": "/machine/peripheral/lab15"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab16", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab16"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890384, "microseconds": 48987}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab16/virtio-backend"}}
+{"timestamp": {"seconds": 1793890384, "microseconds": 100109}, "event": "DEVICE_DELETED", "data": {"device": "lab16", "path": "/machine/peripheral/lab16"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab17", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab17"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890384, "microseconds": 306188}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab17/virtio-backend"}}
+{"timestamp": {"seconds": 1793890384, "microseconds": 306364}, "event": "DEVICE_DELETED", "data": {"device": "lab17", "path": "/machine/peripheral/lab17"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab18", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab18"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890384, "microseconds": 468585}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab18/virtio-backend"}}
+{"timestamp": {"seconds": 1793890384, "microseconds": 519560}, "event": "DEVICE_DELETED", "data": {"device": "lab18", "path": "/machine/peripheral/lab18"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab19", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab19"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890384, "microseconds": 673929}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab19/virtio-backend"}}
+{"timestamp": {"seconds": 1793890384, "microseconds": 724987}, "event": "DEVICE_DELETED", "data": {"device": "lab19", "path": "/machine/peripheral/lab19"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab20", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab20"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890384, "microseconds": 869858}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab20/virtio-backend"}}
+{"timestamp": {"seconds": 1793890384, "microseconds": 920874}, "event": "DEVICE_DELETED", "data": {"device": "lab20", "path": "/machine/peripheral/lab20"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab21", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab21"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890385, "microseconds": 67992}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab21/virtio-backend"}}
+{"timestamp": {"seconds": 1793890385, "microseconds": 118918}, "event": "DEVICE_DELETED", "data": {"device": "lab21", "path": "/machine/peripheral/lab21"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab22", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab22"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890385, "microseconds": 267828}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab22/virtio-backend"}}
+{"timestamp": {"seconds": 1793890385, "microseconds": 318734}, "event": "DEVICE_DELETED", "data": {"device": "lab22", "path": "/machine/peripheral/lab22"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab23", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab23"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890385, "microseconds": 466694}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab23/virtio-backend"}}
+{"timestamp": {"seconds": 1793890385, "microseconds": 517593}, "event": "DEVICE_DELETED", "data": {"device": "lab23", "path": "/machine/peripheral/lab23"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab24", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab24"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890385, "microseconds": 664196}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab24/virtio-backend"}}
+{"timestamp": {"seconds": 1793890385, "microseconds": 715104}, "event": "DEVICE_DELETED", "data": {"device": "lab24", "path": "/machine/peripheral/lab24"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab25", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab25"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890385, "microseconds": 861600}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab25/virtio-backend"}}
+{"timestamp": {"seconds": 1793890385, "microseconds": 912501}, "event": "DEVICE_DELETED", "data": {"device": "lab25", "path": "/machine/peripheral/lab25"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab26", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab26"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890386, "microseconds": 57578}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab26/virtio-backend"}}
+{"timestamp": {"seconds": 1793890386, "microseconds": 108532}, "event": "DEVICE_DELETED", "data": {"device": "lab26", "path": "/machine/peripheral/lab26"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab27", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab27"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890386, "microseconds": 255359}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab27/virtio-backend"}}
+{"timestamp": {"seconds": 1793890386, "microseconds": 306437}, "event": "DEVICE_DELETED", "data": {"device": "lab27", "path": "/machine/peripheral/lab27"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab28", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab28"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890386, "microseconds": 576950}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab28/virtio-backend"}}
+{"timestamp": {"seconds": 1793890386, "microseconds": 627788}, "event": "DEVICE_DELETED", "data": {"device": "lab28", "path": "/machine/peripheral/lab28"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab29", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab29"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890386, "microseconds": 772614}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab29/virtio-backend"}}
+{"timestamp": {"seconds": 1793890386, "microseconds": 823446}, "event": "DEVICE_DELETED", "data": {"device": "lab29", "path": "/machine/peripheral/lab29"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab30", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab30"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890386, "microseconds": 969392}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab30/virtio-backend"}}
+{"timestamp": {"seconds": 1793890387, "microseconds": 20294}, "event": "DEVICE_DELETED", "data": {"device": "lab30", "path": "/machine/peripheral/lab30"}}
+{"return": {"status": "running", "running": true}}
+{"execute": "device_add", "arguments": {"driver": "virtio-lab-pci", "id": "lab31", "bus": "labport"}}
+{"return": {}}
+{"execute": "device_del", "arguments": {"id": "lab31"}}
+{"return": {}}
+{"execute": "query-status"}
+{"return": {"status": "running", "running": true}}
+{"execute": "query-status"}
+{"timestamp": {"seconds": 1793890387, "microseconds": 178324}, "event": "DEVICE_DELETED", "data": {"path": "/machine/peripheral/lab31/virtio-backend"}}
+{"timestamp": {"seconds": 1793890387, "microseconds": 229360}, "event": "DEVICE_DELETED", "data": {"device": "lab31", "path": "/machine/peripheral/lab31"}}
+{"return": {"status": "running", "running": true}}

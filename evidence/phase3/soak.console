@@ -1,0 +1,48 @@
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 37.18841504099999, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 1, "elapsed_seconds": 37.727391438000005, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 37.199721209, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 2, "elapsed_seconds": 75.394419379, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 41.025774618, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 3, "elapsed_seconds": 116.92417187199999, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 38.284734958, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 4, "elapsed_seconds": 155.674156332, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 38.86109273400001, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 5, "elapsed_seconds": 195.01735603, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 37.90595280299999, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 6, "elapsed_seconds": 233.40371339700002, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 38.79790952900004, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 7, "elapsed_seconds": 272.67431540200005, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 36.90143190200001, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 8, "elapsed_seconds": 310.195226153, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 37.65042273900002, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 9, "elapsed_seconds": 348.306704125, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 36.958924293999985, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 10, "elapsed_seconds": 385.727090788, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 37.73019790400002, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 11, "elapsed_seconds": 423.94991804800003, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 37.638708565, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 12, "elapsed_seconds": 462.06513415300003, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 36.599380354999994, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 13, "elapsed_seconds": 499.142773514, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 36.858720069000015, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 14, "elapsed_seconds": 536.4755754729999, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 36.88354973799994, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 15, "elapsed_seconds": 573.831720188, "rss_kib": 34004}
+PASS: PCI/config, modern features, split SG echo, empty/max payload, errors, used ring/ISR, reset/recovery
+PASS: malformed chains, indirect descriptors; 65568 batched requests; 32 reset cycles
+{"requests": 65568, "reset_cycles": 32, "index_wraps": 1, "qtest_wall_seconds": 37.54865602699999, "performance_scope": "qtest IPC + emulation; not KVM performance", "round": 16, "elapsed_seconds": 611.8582675739999, "rss_kib": 34004}

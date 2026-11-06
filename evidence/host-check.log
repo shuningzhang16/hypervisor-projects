@@ -1,0 +1,7 @@
+kernel=6.6.114.1-microsoft-standard-WSL2
+cpu=AMD Ryzen 7 5800H with Radeon Graphics
+crw-rw---- 1 root kvm 10, 232 Nov  4 17:14 /dev/kvm
+ERROR: current user cannot read/write /dev/kvm
+ERROR: tracefs unavailable; check kernel tracing support, mount and permissions
+ERROR: trace-cmd not installed
+host_check_exit=1

@@ -1,0 +1,16 @@
+{
+  "mode": "cpu",
+  "units": 1029600000,
+  "unit": "iterations",
+  "elapsed_ns": 3004219151,
+  "rate": 342718006.993,
+  "traced": false,
+  "host_start_ns": 203310275633,
+  "host_end_ns": 206338208125,
+  "configuration": "vcpu1-mem256",
+  "vcpus": 1,
+  "memory_mib": 256,
+  "disk": "virtio",
+  "nic": "virtio",
+  "repeat": 2
+}

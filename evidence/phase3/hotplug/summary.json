@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "cycles": 32,
+  "guest_recovery": {
+    "mode": "cpu",
+    "units": 368400000,
+    "unit": "iterations",
+    "elapsed_ns": 1004439547,
+    "rate": 366771699.8
+  },
+  "scope": "Linux standard PCIe hotplug/virtio-pci transport; no virtio-lab Guest function driver"
+}
