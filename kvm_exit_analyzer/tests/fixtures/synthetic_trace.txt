@@ -1,0 +1,14 @@
+# SYNTHETIC FIXTURE: not a real KVM benchmark.
+cpus=4
+         worker-77    [000]  100.000000000: sched_wakeup: comm=CPU 0/KVM pid=101 prio=120 target_cpu=001
+         worker-77    [001]  100.000200000: sched_switch: prev_comm=worker prev_pid=77 prev_prio=120 prev_state=S ==> next_comm=CPU 0/KVM next_pid=101 next_prio=120
+      CPU 0/KVM-101   [001]  100.000300000: kvm_entry: vcpu 0, rip 0x1000
+      CPU 0/KVM-101   [001]  100.001300000: kvm_exit: reason EPT_VIOLATION rip 0x1000 info 0 0 isa 1
+      CPU 0/KVM-101   [001]  100.001400000: kvm_mmio: mmio write len 4 gpa 0xfebf0000 val 0x1
+      CPU 0/KVM-101   [001]  100.001500000: sched_switch: prev_comm=CPU 0/KVM prev_pid=101 prev_prio=120 prev_state=R+ ==> next_comm=worker next_pid=77 next_prio=120
+         worker-77    [002]  100.002000000: sched_switch: prev_comm=worker prev_pid=77 prev_prio=120 prev_state=S ==> next_comm=CPU 0/KVM next_pid=101 next_prio=120
+      CPU 0/KVM-101   [002]  100.002300000: kvm_entry: vcpu 0, rip 0x1004
+      CPU 0/KVM-101   [002]  100.003300000: kvm_exit: reason IO_INSTRUCTION rip 0x1004 info 0 0 isa 1
+      CPU 0/KVM-101   [002]  100.003400000: kvm_pio: pio_write at 0x3f8 size 1 count 1 val 0x41
+      CPU 0/KVM-101   [002]  100.003500000: kvm_entry: vcpu 0, rip 0x1008
+      CPU 0/KVM-101   [002]  101.000000000: kvm_exit: reason HLT rip 0x1008 info 0 0 isa 1
