@@ -1,0 +1,5 @@
+# Insert before: specific_ss.add_all(when: 'CONFIG_VIRTIO', if_true: specific_virtio_ss)
+specific_virtio_ss.add(when: 'CONFIG_VIRTIO_LAB',
+                     if_true: files('virtio-lab.c', 'lab-protocol.c'))
+specific_virtio_ss.add(when: ['CONFIG_VIRTIO_PCI', 'CONFIG_VIRTIO_LAB'],
+                     if_true: files('virtio-lab-pci.c'))

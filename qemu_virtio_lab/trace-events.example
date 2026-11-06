@@ -1,0 +1,3 @@
+virtio_lab_notify(void *dev, int64_t now_ns) "dev=%p now_ns=%"PRId64
+virtio_lab_complete(void *dev, uint64_t id, uint32_t status, size_t used, int64_t elapsed_ns) "dev=%p id=%"PRIu64" status=%u used=%zu notify_to_complete_ns=%"PRId64
+virtio_lab_reset(void *dev) "dev=%p"

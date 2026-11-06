@@ -1,0 +1,4 @@
+config VIRTIO_LAB
+    bool
+    default y
+    depends on VIRTIO_PCI

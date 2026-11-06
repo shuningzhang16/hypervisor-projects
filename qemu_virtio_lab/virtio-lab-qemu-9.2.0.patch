@@ -1,0 +1,383 @@
+diff --git a/hw/virtio/virtio-lab.c b/hw/virtio/virtio-lab.c
+new file mode 100644
+--- /dev/null
++++ b/hw/virtio/virtio-lab.c
+@@ -0,0 +1,149 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later
++ * Target: QEMU v9.2.0. See VALIDATION.md for actual validation scope.
++ */
++#include "qemu/osdep.h"
++#include "virtio-lab.h"
++#include "lab-protocol.h"
++#include "qemu/iov.h"
++#include "qemu/module.h"
++#include "qemu/timer.h"
++#include "migration/vmstate.h"
++#include "trace.h"
++
++#define LAB_QUEUE_SIZE 64
++
++static void virtio_lab_process(void *opaque)
++{
++    VirtIOLab *s = opaque;
++    VirtIODevice *vdev = VIRTIO_DEVICE(s);
++    unsigned budget = LAB_QUEUE_SIZE;
++    bool completed = false;
++
++    if (!(vdev->status & VIRTIO_CONFIG_S_DRIVER_OK) || vdev->broken) {
++        return;
++    }
++    while (budget--) {
++        VirtQueueElement *elem = virtqueue_pop(s->vq, sizeof(*elem));
++        uint8_t request[LAB_MAX_MESSAGE], response[LAB_MAX_MESSAGE];
++        size_t out_len, in_len, used;
++        if (!elem) {
++            break;
++        }
++        out_len = iov_size(elem->out_sg, elem->out_num);
++        in_len = iov_size(elem->in_sg, elem->in_num);
++        if (!elem->out_num || !elem->in_num ||
++            out_len < LAB_HEADER_SIZE || out_len > sizeof(request) ||
++            in_len < LAB_HEADER_SIZE) {
++            /* Cannot safely return a structured response: consume nothing and
++             * require a guest reset. Never read/write outside mapped buffers. */
++            virtqueue_detach_element(s->vq, elem, 0);
++            g_free(elem);
++            virtio_error(vdev, "virtio-lab: invalid descriptor directions/lengths");
++            return;
++        }
++        if (iov_to_buf(elem->out_sg, elem->out_num, 0, request, out_len) != out_len) {
++            virtqueue_detach_element(s->vq, elem, 0);
++            g_free(elem);
++            virtio_error(vdev, "virtio-lab: short request copy");
++            return;
++        }
++        used = lab_respond(request, out_len, response, MIN(in_len, sizeof(response)));
++        if (!used || iov_from_buf(elem->in_sg, elem->in_num, 0, response, used) != used) {
++            virtqueue_detach_element(s->vq, elem, 0);
++            g_free(elem);
++            virtio_error(vdev, "virtio-lab: short response copy");
++            return;
++        }
++        virtqueue_push(s->vq, elem, used);
++        trace_virtio_lab_complete(s, ldq_le_p(response + 8), ldl_le_p(response),
++                                  used, qemu_clock_get_ns(QEMU_CLOCK_REALTIME) - s->kick_ns);
++        g_free(elem);
++        completed = true;
++    }
++    if (completed) {
++        virtio_notify(vdev, s->vq);
++    }
++    if (!vdev->broken && !virtio_queue_empty(s->vq)) {
++        /* Bounded work per callback; continue even if the guest refills without
++         * another kick. No descriptor is retained between callbacks. */
++        qemu_bh_schedule(s->bh);
++    }
++}
++
++static void virtio_lab_handle_output(VirtIODevice *vdev, VirtQueue *vq)
++{
++    VirtIOLab *s = VIRTIO_LAB(vdev);
++    s->kick_ns = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
++    trace_virtio_lab_notify(s, s->kick_ns);
++    virtio_lab_process(s);
++}
++
++static uint64_t virtio_lab_get_features(VirtIODevice *vdev, uint64_t features, Error **errp)
++{
++    /* No device-specific feature bits in protocol v1; transport bits preserved. */
++    return features;
++}
++
++static void virtio_lab_get_config(VirtIODevice *vdev, uint8_t *config)
++{
++    stl_le_p(config, LAB_VERSION);
++    stl_le_p(config + 4, LAB_MAX_PAYLOAD);
++}
++
++static void virtio_lab_reset(VirtIODevice *vdev)
++{
++    VirtIOLab *s = VIRTIO_LAB(vdev);
++    qemu_bh_cancel(s->bh);
++    s->kick_ns = 0;
++    /* Core resets rings. Synchronous requests leave no retained elements. */
++    trace_virtio_lab_reset(s);
++}
++
++static void virtio_lab_realize(DeviceState *dev, Error **errp)
++{
++    VirtIOLab *s = VIRTIO_LAB(dev);
++    VirtIODevice *vdev = VIRTIO_DEVICE(dev);
++    virtio_init(vdev, VIRTIO_LAB_DEVICE_ID, 8);
++    s->vq = virtio_add_queue(vdev, LAB_QUEUE_SIZE, virtio_lab_handle_output);
++    s->bh = qemu_bh_new(virtio_lab_process, s);
++}
++
++static void virtio_lab_unrealize(DeviceState *dev)
++{
++    VirtIOLab *s = VIRTIO_LAB(dev);
++    qemu_bh_delete(s->bh);
++    virtio_del_queue(VIRTIO_DEVICE(dev), 0);
++    virtio_cleanup(VIRTIO_DEVICE(dev));
++}
++
++static const VMStateDescription vmstate_virtio_lab = {
++    .name = "virtio-lab",
++    .unmigratable = true,
++};
++
++static void virtio_lab_class_init(ObjectClass *klass, void *data)
++{
++    DeviceClass *dc = DEVICE_CLASS(klass);
++    VirtioDeviceClass *vdc = VIRTIO_DEVICE_CLASS(klass);
++    dc->desc = "Private experimental VirtIO echo device";
++    dc->vmsd = &vmstate_virtio_lab;
++    set_bit(DEVICE_CATEGORY_MISC, dc->categories);
++    vdc->realize = virtio_lab_realize;
++    vdc->unrealize = virtio_lab_unrealize;
++    vdc->get_features = virtio_lab_get_features;
++    vdc->get_config = virtio_lab_get_config;
++    vdc->reset = virtio_lab_reset;
++}
++
++static const TypeInfo virtio_lab_info = {
++    .name = TYPE_VIRTIO_LAB,
++    .parent = TYPE_VIRTIO_DEVICE,
++    .instance_size = sizeof(VirtIOLab),
++    .class_init = virtio_lab_class_init,
++};
++
++static void virtio_lab_register_types(void)
++{
++    type_register_static(&virtio_lab_info);
++}
++type_init(virtio_lab_register_types)
+diff --git a/hw/virtio/virtio-lab.h b/hw/virtio/virtio-lab.h
+new file mode 100644
+--- /dev/null
++++ b/hw/virtio/virtio-lab.h
+@@ -0,0 +1,17 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#ifndef HW_VIRTIO_LAB_H
++#define HW_VIRTIO_LAB_H
++#include "hw/virtio/virtio.h"
++#include "qemu/main-loop.h"
++#include "qom/object.h"
++
++#define TYPE_VIRTIO_LAB "virtio-lab-device"
++OBJECT_DECLARE_SIMPLE_TYPE(VirtIOLab, VIRTIO_LAB)
++
++struct VirtIOLab {
++    VirtIODevice parent_obj;
++    VirtQueue *vq;
++    QEMUBH *bh;
++    int64_t kick_ns;
++};
++#endif
+diff --git a/hw/virtio/virtio-lab-pci.c b/hw/virtio/virtio-lab-pci.c
+new file mode 100644
+--- /dev/null
++++ b/hw/virtio/virtio-lab-pci.c
+@@ -0,0 +1,52 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#include "qemu/osdep.h"
++#include "hw/virtio/virtio-pci.h"
++#include "hw/qdev-properties.h"
++#include "virtio-lab.h"
++#include "lab-protocol.h"
++#include "qemu/module.h"
++
++typedef struct VirtIOLabPCI {
++    VirtIOPCIProxy parent_obj;
++    VirtIOLab vdev;
++} VirtIOLabPCI;
++
++#define TYPE_VIRTIO_LAB_PCI "virtio-lab-pci-base"
++DECLARE_INSTANCE_CHECKER(VirtIOLabPCI, VIRTIO_LAB_PCI, TYPE_VIRTIO_LAB_PCI)
++
++static void virtio_lab_pci_realize(VirtIOPCIProxy *proxy, Error **errp)
++{
++    VirtIOLabPCI *s = VIRTIO_LAB_PCI(proxy);
++    qdev_realize(DEVICE(&s->vdev), BUS(&proxy->bus), errp);
++}
++
++static void virtio_lab_pci_instance_init(Object *obj)
++{
++    VirtIOLabPCI *s = VIRTIO_LAB_PCI(obj);
++    virtio_instance_init_common(obj, &s->vdev, sizeof(s->vdev), TYPE_VIRTIO_LAB);
++}
++
++static void virtio_lab_pci_class_init(ObjectClass *klass, void *data)
++{
++    PCIDeviceClass *pc = PCI_DEVICE_CLASS(klass);
++    VIRTIO_PCI_CLASS(klass)->realize = virtio_lab_pci_realize;
++    pc->vendor_id = PCI_VENDOR_ID_REDHAT_QUMRANET;
++    pc->device_id = 0x1040 + VIRTIO_LAB_DEVICE_ID;
++    pc->revision = 1;
++    pc->class_id = PCI_CLASS_OTHERS;
++    set_bit(DEVICE_CATEGORY_MISC, DEVICE_CLASS(klass)->categories);
++}
++
++static const VirtioPCIDeviceTypeInfo virtio_lab_pci_info = {
++    .base_name = TYPE_VIRTIO_LAB_PCI,
++    .non_transitional_name = "virtio-lab-pci",
++    .instance_size = sizeof(VirtIOLabPCI),
++    .instance_init = virtio_lab_pci_instance_init,
++    .class_init = virtio_lab_pci_class_init,
++};
++
++static void virtio_lab_pci_register_types(void)
++{
++    virtio_pci_types_register(&virtio_lab_pci_info);
++}
++type_init(virtio_lab_pci_register_types)
+diff --git a/hw/virtio/lab-protocol.c b/hw/virtio/lab-protocol.c
+new file mode 100644
+--- /dev/null
++++ b/hw/virtio/lab-protocol.c
+@@ -0,0 +1,50 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#include "lab-protocol.h"
++#include <string.h>
++
++static uint32_t get32(const uint8_t *p)
++{
++    return (uint32_t)p[0] | (uint32_t)p[1] << 8 |
++           (uint32_t)p[2] << 16 | (uint32_t)p[3] << 24;
++}
++
++static void put32(uint8_t *p, uint32_t value)
++{
++    p[0] = value;
++    p[1] = value >> 8;
++    p[2] = value >> 16;
++    p[3] = value >> 24;
++}
++
++size_t lab_respond(const uint8_t *request, size_t request_len,
++                   uint8_t *response, size_t response_capacity)
++{
++    uint32_t length = 0, status = LAB_OK;
++    if (response_capacity < LAB_HEADER_SIZE) {
++        return 0;
++    }
++    memset(response, 0, LAB_HEADER_SIZE);
++    if (request_len < LAB_HEADER_SIZE) {
++        status = LAB_BAD_REQUEST;
++    } else {
++        memcpy(response + 8, request + 8, 8);
++        length = get32(request + 4);
++        if (length > LAB_MAX_PAYLOAD || request_len != LAB_HEADER_SIZE + length ||
++            request[2] != 0 || request[3] != 0) {
++            status = LAB_BAD_REQUEST;
++        } else if (request[0] != LAB_OP_ECHO || request[1] != 0) {
++            status = LAB_UNSUPPORTED;
++        } else if (response_capacity - LAB_HEADER_SIZE < length) {
++            status = LAB_NO_SPACE;
++        }
++    }
++    if (status != LAB_OK) {
++        length = 0;
++    }
++    put32(response, status);
++    put32(response + 4, length);
++    if (length) {
++        memcpy(response + LAB_HEADER_SIZE, request + LAB_HEADER_SIZE, length);
++    }
++    return LAB_HEADER_SIZE + length;
++}
+diff --git a/hw/virtio/lab-protocol.h b/hw/virtio/lab-protocol.h
+new file mode 100644
+--- /dev/null
++++ b/hw/virtio/lab-protocol.h
+@@ -0,0 +1,26 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++#ifndef LAB_PROTOCOL_H
++#define LAB_PROTOCOL_H
++#include <stddef.h>
++#include <stdint.h>
++
++/* Local experiment only. This is NOT an OASIS-assigned device ID. */
++#define VIRTIO_LAB_DEVICE_ID 63
++#define LAB_VERSION 1
++#define LAB_MAX_PAYLOAD 4096
++#define LAB_HEADER_SIZE 16
++#define LAB_MAX_MESSAGE (LAB_HEADER_SIZE + LAB_MAX_PAYLOAD)
++#define LAB_OP_ECHO 1
++#define LAB_OK 0
++#define LAB_BAD_REQUEST 1
++#define LAB_UNSUPPORTED 2
++#define LAB_NO_SPACE 3
++
++/* LE wire format; no packed-struct dereferences or host-endian assumptions.
++ * Request:  opcode:u16, flags:u16(0), length:u32, request_id:u64, payload.
++ * Response: status:u32, length:u32, request_id:u64, payload.
++ * Returns actual bytes written; zero means no safe response header fits.
++ */
++size_t lab_respond(const uint8_t *request, size_t request_len,
++                   uint8_t *response, size_t response_capacity);
++#endif
+diff --git a/hw/virtio/meson.build b/hw/virtio/meson.build
+--- a/hw/virtio/meson.build
++++ b/hw/virtio/meson.build
+@@ -93,5 +93,11 @@
+ 
+ system_ss.add(files('virtio-hmp-cmds.c'))
+ 
++# Insert before: specific_ss.add_all(when: 'CONFIG_VIRTIO', if_true: specific_virtio_ss)
++specific_virtio_ss.add(when: 'CONFIG_VIRTIO_LAB',
++                     if_true: files('virtio-lab.c', 'lab-protocol.c'))
++specific_virtio_ss.add(when: ['CONFIG_VIRTIO_PCI', 'CONFIG_VIRTIO_LAB'],
++                     if_true: files('virtio-lab-pci.c'))
++
+ specific_ss.add_all(when: 'CONFIG_VIRTIO', if_true: specific_virtio_ss)
+ system_ss.add(when: 'CONFIG_ACPI', if_true: files('virtio-acpi.c'))
+diff --git a/hw/virtio/Kconfig b/hw/virtio/Kconfig
+--- a/hw/virtio/Kconfig
++++ b/hw/virtio/Kconfig
+@@ -125,3 +125,8 @@
+     bool
+     default y
+     depends on VIRTIO && VHOST_USER && ARM
++
++config VIRTIO_LAB
++    bool
++    default y
++    depends on VIRTIO_PCI
+diff --git a/hw/virtio/trace-events b/hw/virtio/trace-events
+--- a/hw/virtio/trace-events
++++ b/hw/virtio/trace-events
+@@ -158,3 +158,7 @@
+ virtio_gpio_start(void) "start"
+ virtio_gpio_stop(void) "stop"
+ virtio_gpio_set_status(uint8_t status) "0x%x"
++
++virtio_lab_notify(void *dev, int64_t now_ns) "dev=%p now_ns=%"PRId64
++virtio_lab_complete(void *dev, uint64_t id, uint32_t status, size_t used, int64_t elapsed_ns) "dev=%p id=%"PRIu64" status=%u used=%zu notify_to_complete_ns=%"PRId64
++virtio_lab_reset(void *dev) "dev=%p"
+diff --git a/hw/virtio/virtio-pci.c b/hw/virtio/virtio-pci.c
+--- a/hw/virtio/virtio-pci.c
++++ b/hw/virtio/virtio-pci.c
+@@ -234,6 +234,11 @@
+ } VirtIOPCIIDInfo;
+ 
+ static const VirtIOPCIIDInfo virtio_pci_id_info[] = {
++    {
++        .vdev_id = 63, /* virtio-lab: local experiment */
++        .trans_devid = 0,
++        .class_id = PCI_CLASS_OTHERS,
++    },
+     {
+         .vdev_id = VIRTIO_ID_CRYPTO,
+         .class_id = PCI_CLASS_OTHERS,
+diff --git a/hw/virtio/virtio.c b/hw/virtio/virtio.c
+--- a/hw/virtio/virtio.c
++++ b/hw/virtio/virtio.c
+@@ -156,6 +156,7 @@
+ };
+ 
+ const char *virtio_device_names[] = {
++    [63] = "virtio-lab", /* local experiment */
+     [VIRTIO_ID_NET] = "virtio-net",
+     [VIRTIO_ID_BLOCK] = "virtio-blk",
+     [VIRTIO_ID_CONSOLE] = "virtio-serial",
