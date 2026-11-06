@@ -1,0 +1,72 @@
+#!/bin/busybox sh
+export PATH=/bin
+/bin/busybox --install -s /bin
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+exec </dev/ttyS0 >/dev/ttyS0 2>&1
+stty -echo
+for name in virtio virtio_ring virtio_pci_modern_dev virtio_pci_legacy_dev virtio_pci; do
+    if test -f /modules/$name.ko; then
+        insmod /modules/$name.ko || { echo LAB_BOOT_FAILED; poweroff -f; }
+    fi
+done
+insmod /modules/virtio_lab.ko || { echo LAB_BOOT_FAILED; poweroff -f; }
+echo LAB_READY
+while read -r mode parameter; do
+    rc=0
+    case "$mode" in
+        smoke|latency|concurrent|timeout)
+            /bin/lab-client "$mode" "$parameter"; rc=$?;;
+        reload)
+            rmmod virtio_lab && insmod /modules/virtio_lab.ko; rc=$?;;
+        fault)
+            rmmod virtio_lab && insmod /modules/virtio_lab.ko test_skip_kick=1 timeout_ms=100; rc=$?;;
+        rebind)
+            for dev in /sys/bus/virtio/drivers/virtio_lab/virtio*; do
+                test -L "$dev" || continue
+                name=${dev##*/}
+                echo "$name" > /sys/bus/virtio/drivers/virtio_lab/unbind &&
+                    echo "$name" > /sys/bus/virtio/drivers/virtio_lab/bind || rc=1
+            done;;
+        remove-start)
+            /bin/lab-client remove > /tmp/remove.log 2>&1 &
+            remove_pid=$!
+            count=0
+            while ! grep -q LAB_HOLD_OPEN /tmp/remove.log; do
+                sleep .1; count=$((count + 1)); test "$count" -lt 50 || { rc=1; break; }
+            done
+            cat /tmp/remove.log;;
+        remove-result)
+            wait "$remove_pid"; rc=$?; cat /tmp/remove.log;;
+        unload-busy)
+            if rmmod virtio_lab; then
+                rc=1
+            else
+                test -d /sys/module/virtio_lab || rc=1
+                echo LAB_PASS unload_busy_open_fd
+            fi;;
+        unload)
+            rmmod virtio_lab; rc=$?
+            test ! -d /sys/module/virtio_lab || rc=1
+            for file in /dev/virtio-lab-*; do test ! -e "$file" || rc=1; done;;
+        load)
+            insmod /modules/virtio_lab.ko; rc=$?;;
+        await-device)
+            ready=0
+            for attempt in $(seq 1 150); do
+                for file in /dev/virtio-lab-*; do
+                    test -c "$file" && ready=1
+                done
+                test "$ready" = 0 || break
+                sleep .1
+            done
+            if test "$ready" = 1; then echo LAB_PASS device_node_ready; else rc=1; fi;;
+        dmesg)
+            dmesg;;
+        poweroff)
+            poweroff -f;;
+        *) rc=2;;
+    esac
+    echo "LAB_DONE $rc"
+done
